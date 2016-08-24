@@ -5,7 +5,9 @@ public class CameraController : MonoBehaviour
 {
     public GameObject Planet;
     public Camera Camera;
-    private float speed = 3f;
+
+    public float scrollSpeed = 50f;
+    private float cameraSpeed = 3f;
 
 
 	// Use this for initialization
@@ -20,24 +22,36 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             
-            //Debug.Log(Mathf.Abs(transform.eulerAngles.x));
-            if (Mathf.Abs(transform.eulerAngles.x) < 90f || Mathf.Abs(transform.eulerAngles.x) > 270f)
-                transform.RotateAround(Planet.transform.position, Vector3.left, Input.GetAxis("Mouse Y") * speed);
-            else
+            //Debug.Log("axis: " + Input.GetAxis("Mouse Y"));
+            //Debug.Log("angle: " + transform.eulerAngles.x);
+            if (Mathf.Abs(transform.eulerAngles.x) > 80f && Mathf.Abs(transform.eulerAngles.x) < 100f && Input.GetAxis("Mouse Y") > 0 
+                || Mathf.Abs(transform.eulerAngles.x) < 280f && Mathf.Abs(transform.eulerAngles.x) > 260f && Input.GetAxis("Mouse Y") < 0)
             {
-                //transform.RotateAround(Planet.transform.position, Vector3.left, Input.GetAxis("Mouse Y") * speed);
+                transform.RotateAround(Planet.transform.position, -transform.right, Input.GetAxis("Mouse Y") * cameraSpeed);
             }
+            else if ( Mathf.Abs(transform.eulerAngles.x) < 80f || Mathf.Abs(transform.eulerAngles.x) > 280f )
+            {
+                transform.RotateAround(Planet.transform.position, -transform.right, Input.GetAxis("Mouse Y") * cameraSpeed);
+            }
+
+
+            transform.RotateAround(Planet.transform.position, Vector3.up, Input.GetAxis("Mouse X") * cameraSpeed);
             
-
-
-            transform.RotateAround(Planet.transform.position, Vector3.up, Input.GetAxis("Mouse X") * speed);
-            Debug.Log(Input.GetAxis("Mouse ScrollWheel"));
             
 
         }
 
-        Camera.fieldOfView += Input.GetAxis("Mouse ScrollWheel");
+        Camera.fieldOfView -= scrollSpeed * Input.GetAxis("Mouse ScrollWheel");
 
-        transform.LookAt(Planet.transform);
+
+	    if (Input.GetMouseButton(0))
+	    {
+	        transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")), Space.Self);
+	    }
+	    else
+	    {
+            transform.LookAt(Planet.transform);
+        }
+        
     }
 }

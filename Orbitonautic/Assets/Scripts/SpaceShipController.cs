@@ -9,18 +9,20 @@ public class SpaceShipController : MonoBehaviour
     public GameObject ExplosionEffect;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         transform.RotateAround(Planet.transform.position, Vector3.back, Time.deltaTime* speed);
     }
 
     void OnCollisionEnter(Collision collision)
     {
         Instantiate(ExplosionEffect, collision.transform.position, collision.transform.rotation);
-        Destroy(this);
+        
     }
 }
