@@ -13,11 +13,24 @@ public class SpaceShipController : MonoBehaviour
 
     public Vector3 GravityRadius;
 
-	// Use this for initialization
-	void Start ()
+
+    public int segments = 64;
+    public float xradius;
+    public float yradius;
+    LineRenderer line;
+
+    // Use this for initialization
+    void Start ()
     {
-	
-	}
+        line = gameObject.GetComponent<LineRenderer>();
+
+        line.SetVertexCount(segments + 1);
+        line.useWorldSpace = false;
+
+        xradius = (Earth.transform.position - this.transform.position).magnitude;
+        yradius = xradius;
+        CreatePoints();
+    }
 
     void Update()
     {
@@ -25,6 +38,7 @@ public class SpaceShipController : MonoBehaviour
             Mathf.Sqrt(GravitationalConstant*Earth.Mass/(Earth.transform.position - this.transform.position).magnitude);
         
         transform.RotateAround(Earth.transform.position, Vector3.back, Time.deltaTime * speed);
+
     }
 
     void OnGUI()
@@ -43,6 +57,26 @@ public class SpaceShipController : MonoBehaviour
 
         //If thruster input is detected, apply force, and update trajectory visualization
 
+
+    }
+
+    void CreatePoints()
+    {
+        float x;
+        float y;
+        float z = 0f;
+
+        float angle = 20f;
+
+        for (int i = 0; i < (segments + 1); i++)
+        {
+            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
+            y = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
+
+            line.SetPosition(i, new Vector3(x, y, z));
+
+            angle += (360f / segments);
+        }
     }
 
     void OnCollisionEnter(Collision collision)
