@@ -35,7 +35,7 @@ public class SpaceShipController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate ()
     {
-
+        //Calculate eliptic equation, apopsis, peripsis, from spaceship location, planet location and speed vector
 
         //Apply gravity force
 
