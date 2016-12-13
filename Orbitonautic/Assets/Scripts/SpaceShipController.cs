@@ -25,7 +25,7 @@ public class SpaceShipController : MonoBehaviour
         line = gameObject.GetComponent<LineRenderer>();
 
         line.SetVertexCount(segments + 1);
-        line.useWorldSpace = false;
+        line.useWorldSpace = true;
 
         xradius = (Earth.transform.position - this.transform.position).magnitude;
         yradius = xradius;
