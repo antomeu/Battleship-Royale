@@ -34,11 +34,16 @@ public class SpaceShipController : MonoBehaviour
 
     void Update()
     {
-        speed =
-            Mathf.Sqrt(GravitationalConstant*Earth.Mass/(Earth.transform.position - this.transform.position).magnitude);
-        
-        transform.RotateAround(Earth.transform.position, Vector3.back, Time.deltaTime * speed);
+        CaclulateNextPosition();
 
+    }
+
+    void CaclulateNextPosition()
+    {
+        speed =
+            Mathf.Sqrt(GravitationalConstant * Earth.Mass / (Earth.transform.position - this.transform.position).magnitude);
+
+        transform.RotateAround(Earth.transform.position, Vector3.back, Time.deltaTime * speed);
     }
 
     void OnGUI()
