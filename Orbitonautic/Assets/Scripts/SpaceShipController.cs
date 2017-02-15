@@ -17,6 +17,7 @@ public class SpaceShipController : MonoBehaviour
     public int segments = 64;
     public float xradius;
     public float yradius;
+    public bool recalculate;
     LineRenderer line;
 
     // Use this for initialization
@@ -35,6 +36,12 @@ public class SpaceShipController : MonoBehaviour
     void Update()
     {
         CaclulateNextPosition();
+
+        if (recalculate)
+        {
+            CreatePoints();
+            recalculate = false;
+        }
 
     }
 
