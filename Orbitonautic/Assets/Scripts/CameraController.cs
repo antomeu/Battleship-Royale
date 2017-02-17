@@ -41,7 +41,9 @@ public class CameraController : MonoBehaviour
 
         }
 
-        Camera.fieldOfView -= scrollSpeed * Input.GetAxis("Mouse ScrollWheel");
+	    if (Camera.fieldOfView >= 1)
+	        Camera.fieldOfView -= scrollSpeed*Input.GetAxis("Mouse ScrollWheel");
+	    else Camera.fieldOfView = 1;
 
 
 	    if (Input.GetMouseButton(0))

@@ -28,8 +28,8 @@ public class SpaceShipController : MonoBehaviour
         line.SetVertexCount(segments + 1);
         line.useWorldSpace = true;
 
-        xradius = (Earth.transform.position - this.transform.position).magnitude;
-        yradius = xradius;
+        //xradius = (Earth.transform.position - this.transform.position).magnitude;
+        //yradius = xradius;
         CreatePoints();
     }
 
@@ -49,8 +49,10 @@ public class SpaceShipController : MonoBehaviour
     {
         speed =
             Mathf.Sqrt(GravitationalConstant * Earth.Mass / (Earth.transform.position - this.transform.position).magnitude);
+        //= Mathf.Sqrt(GravitationalConstant * Earth.Mass * ( 2 / (Earth.transform.position - this.transform.position).magnitude) - 1 / xradius));
 
         transform.RotateAround(Earth.transform.position, Vector3.back, Time.deltaTime * speed);
+        //transform.position
     }
 
     void OnGUI()
@@ -82,8 +84,8 @@ public class SpaceShipController : MonoBehaviour
 
         for (int i = 0; i < (segments + 1); i++)
         {
-            x = Mathf.Sin(Mathf.Deg2Rad * angle) * xradius;
-            y = Mathf.Cos(Mathf.Deg2Rad * angle) * yradius;
+            x = Mathf.Sqrt(xradius * xradius - yradius * yradius) + Mathf.Cos(Mathf.Deg2Rad * angle) * xradius;
+            y = Mathf.Sin(Mathf.Deg2Rad * angle) * yradius;
 
             line.SetPosition(i, new Vector3(x, y, z));
 
