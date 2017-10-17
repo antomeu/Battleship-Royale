@@ -46,7 +46,7 @@ public class CameraController : MonoBehaviour
 	    else Camera.fieldOfView = 1;
 
 
-	    if (Input.GetMouseButton(0))
+	    if (Input.GetMouseButton(3))
 	    {
 	        transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")), Space.Self);
 	    }

@@ -10,21 +10,23 @@ namespace Assets.Scripts
     {
         public Vector3 Speed;
         public Vector3 ThrustersForce;
+        public float ThrusterMultiplier = 20;
         public float SpaceObjectMass;
 
         public LineRenderer ProjectedTrajectoryLine;
 
         public GravityController GravityController;
 
-        public Vector3 CalculateSpeedDelta(Vector3 sumOfForces)
+        private float timeInterval = 0.05f;
+
+        public Vector3 CalculateSpeedDelta(Vector3 sumOfForces, float timeInterval)
         {
-            sumOfForces = CalculateSumOfForces(transform.position);
-            return  sumOfForces * (Time.fixedDeltaTime / SpaceObjectMass);
+            return  sumOfForces * (timeInterval / SpaceObjectMass); //Newton 2d law
         }
 
-        public Vector3 CalculatePositionDelta(Vector3 currentSpeed)
+        public Vector3 CalculatePositionDelta(Vector3 currentSpeed, float timeInterval)
         {
-            return currentSpeed / Time.fixedDeltaTime;
+            return currentSpeed * timeInterval;
         }
 
 
@@ -35,8 +37,9 @@ namespace Assets.Scripts
             foreach (CellestialBody CellestialBody in GravityController.CellestialBody)
             {
                 Vector3 objectToCellestialBodyVector = CellestialBody.transform.position - objectPosition; //Object to gravity body vector
+                // Add each gravity body's gravitational force
                 sumOfForces += objectToCellestialBodyVector.normalized 
-                    *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / objectToCellestialBodyVector.sqrMagnitude ;
+                    *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / objectToCellestialBodyVector.sqrMagnitude ; 
             }
             return sumOfForces;
         }
@@ -44,26 +47,35 @@ namespace Assets.Scripts
         private void CalculateTrajectoryPoints(int numberOfPoints)
         {
             //Initialize first next point
-            Vector3 NextSpeed = Speed; //+ CalculateSpeedDelta(CalculateSumOfForces(transform.position)); 
-            Vector3 NextObjectPosition = transform.position;//+ CalculatePositionDelta(NextSpeed);
+            Vector3 NextSpeed = Speed; 
+            Vector3 NextObjectPosition = transform.position;
 
             ProjectedTrajectoryLine.positionCount = numberOfPoints;
 
-            for (int i = 0; i< numberOfPoints; i++)
+            // TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
+            for (int i = 0; i < numberOfPoints; i++)
             {
+                NextObjectPosition += CalculatePositionDelta(NextSpeed, 5 * timeInterval);
+                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) , 5 * timeInterval);
+                    
                 ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
-
-                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition));
-                NextObjectPosition += CalculatePositionDelta(NextSpeed);
             }
+            
         }
 
         void FixedUpdate()
         {
-            Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position));
-            transform.position += CalculatePositionDelta(Speed);
+            transform.position += CalculatePositionDelta(Speed, timeInterval);
+            Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
+            
 
             CalculateTrajectoryPoints(1024);
+        }
+
+        void Update()
+        {
+            transform.forward = Speed;
+            ThrustersForce = ThrusterMultiplier* ( Input.GetAxis("Horizontal") * transform.forward + Input.GetAxis("Sideway") * transform.right + Input.GetAxis("Vertical") * transform.up); 
         }
 
     }
