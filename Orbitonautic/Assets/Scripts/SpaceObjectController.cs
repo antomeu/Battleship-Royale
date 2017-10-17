@@ -12,11 +12,13 @@ namespace Assets.Scripts
         public Vector3 ThrustersForce;
         public float SpaceObjectMass;
 
+        public LineRenderer ProjectedTrajectoryLine;
+
         public GravityController GravityController;
 
         public Vector3 CalculateSpeedDelta(Vector3 sumOfForces)
         {
-            sumOfForces = CalculateSumOfForces();
+            sumOfForces = CalculateSumOfForces(transform.position);
             return  sumOfForces * (Time.fixedDeltaTime / SpaceObjectMass);
         }
 
@@ -27,24 +29,41 @@ namespace Assets.Scripts
 
 
 
-        private Vector3 CalculateSumOfForces()
+        private Vector3 CalculateSumOfForces(Vector3 objectPosition)
         {
             Vector3 sumOfForces = ThrustersForce;
             foreach (CellestialBody CellestialBody in GravityController.CellestialBody)
             {
-                Vector3 spaceShipToCellestialBodyVector = CellestialBody.transform.position - transform.position;
-                sumOfForces += spaceShipToCellestialBodyVector.normalized *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / spaceShipToCellestialBodyVector.sqrMagnitude ;
+                Vector3 objectToCellestialBodyVector = CellestialBody.transform.position - objectPosition; //Object to gravity body vector
+                sumOfForces += objectToCellestialBodyVector.normalized 
+                    *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / objectToCellestialBodyVector.sqrMagnitude ;
             }
-            Debug.Log(sumOfForces.magnitude);
             return sumOfForces;
+        }
+
+        private void CalculateTrajectoryPoints(int numberOfPoints)
+        {
+            //Initialize first next point
+            Vector3 NextSpeed = Speed; //+ CalculateSpeedDelta(CalculateSumOfForces(transform.position)); 
+            Vector3 NextObjectPosition = transform.position;//+ CalculatePositionDelta(NextSpeed);
+
+            ProjectedTrajectoryLine.positionCount = numberOfPoints;
+
+            for (int i = 0; i< numberOfPoints; i++)
+            {
+                ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
+
+                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition));
+                NextObjectPosition += CalculatePositionDelta(NextSpeed);
+            }
         }
 
         void FixedUpdate()
         {
-            Speed += CalculateSpeedDelta(CalculateSumOfForces());
+            Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position));
             transform.position += CalculatePositionDelta(Speed);
-            //TODO: calculate actual new position and speed
-            //TODO: calculate and render the next 64 positions
+
+            CalculateTrajectoryPoints(1024);
         }
 
     }
