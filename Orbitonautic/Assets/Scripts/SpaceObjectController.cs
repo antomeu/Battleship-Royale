@@ -55,8 +55,8 @@ namespace Assets.Scripts
             // TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
             for (int i = 0; i < numberOfPoints; i++)
             {
-                NextObjectPosition += CalculatePositionDelta(NextSpeed, 5 * timeInterval);
-                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) , 5 * timeInterval);
+                NextObjectPosition += CalculatePositionDelta(NextSpeed, 20 * timeInterval);
+                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) - ThrustersForce  , 20 * timeInterval);
                     
                 ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
             }
