@@ -10,8 +10,8 @@ namespace Assets.Scripts
     {
         public Vector3 Speed;
         public Vector3 ThrustersForce;
-        public float ThrusterMultiplier = 20;
-        public float SpaceObjectMass;
+
+        public float SpaceObjectMass = 1;
 
         public LineRenderer ProjectedTrajectoryLine;
 
@@ -72,11 +72,7 @@ namespace Assets.Scripts
             CalculateTrajectoryPoints(1024);
         }
 
-        void Update()
-        {
-            transform.forward = Speed;
-            ThrustersForce = ThrusterMultiplier* ( Input.GetAxis("Horizontal") * transform.forward + Input.GetAxis("Sideway") * transform.right + Input.GetAxis("Vertical") * transform.up); 
-        }
+
 
     }
 }

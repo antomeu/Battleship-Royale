@@ -3,20 +3,26 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-    public GameObject Planet;
+    public GameObject Pivot;
+    public GameObject Target;
     public Camera Camera;
 
     public float ScrollSpeed = 50f;
-    public float CameraSpeed = 3f;
+    public float CameraRotateSpeed = 3f;
 
     public float MinCameraFieldOfView = 1;
     public float MaxCameraFieldOfView = 70;
 
-    public float MinCameraDistance;
+    public float MinCameraDistance = 1000;
+    public float MaxCameraDistance = 30000;
 
-	// Use this for initialization
-	void Start () {
-        MinCameraDistance = (transform.position - Planet.transform.position).magnitude;
+    float zoomTarget;
+    float cameraDistanceTarget;
+    float scrollProgress = 0.5f;
+
+    // Use this for initialization
+    void Start () {
+
     }
 	
 	// Update is called once per frame
@@ -26,47 +32,43 @@ public class CameraController : MonoBehaviour
 
         RotateCamera();
         PanCamera();
+
+        Pivot.transform.position = Target.transform.position;
     }
 
     void ZoomCamera()
     {
+        float  velocity = 0f;
+        scrollProgress = Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed) , 0f , 1f);
+        //scrollProgress *= scrollProgress;
+        zoomTarget = Mathf.Lerp(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
+        Camera.fieldOfView = Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
-        if (Camera.fieldOfView >= MinCameraFieldOfView && Camera.fieldOfView <= MaxCameraFieldOfView )
-        {
-            Camera.fieldOfView -= ScrollSpeed * Input.GetAxis("Mouse ScrollWheel");
-            if (Camera.fieldOfView <= MinCameraFieldOfView)  Camera.fieldOfView =  MinCameraFieldOfView ;
-        }
-        else if (Camera.fieldOfView >= MaxCameraFieldOfView)
-        {
-            Camera.fieldOfView = MaxCameraFieldOfView;
+        cameraDistanceTarget = Mathf.Lerp(MinCameraDistance, MaxCameraDistance, scrollProgress);
+        transform.localPosition = new Vector3(0, 0, cameraDistanceTarget);//Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
+    }
 
-        }
-        
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 100), scrollProgress.ToString());
     }
 
     void RotateCamera()
     {
         if (Input.GetMouseButton(1))//Rotate camera
         {
-
-            //Debug.Log("axis: " + Input.GetAxis("Mouse Y"));
-            //Debug.Log("angle: " + transform.eulerAngles.x);
-            if (Mathf.Abs(transform.eulerAngles.x) > 80f && Mathf.Abs(transform.eulerAngles.x) < 100f && Input.GetAxis("Mouse Y") > 0
-                || Mathf.Abs(transform.eulerAngles.x) < 280f && Mathf.Abs(transform.eulerAngles.x) > 260f && Input.GetAxis("Mouse Y") < 0)
-            {
-                transform.RotateAround(Planet.transform.position, -transform.right, Input.GetAxis("Mouse Y") * CameraSpeed);
-            }
-            else if (Mathf.Abs(transform.eulerAngles.x) < 80f || Mathf.Abs(transform.eulerAngles.x) > 280f)
-            {
-                transform.RotateAround(Planet.transform.position, -transform.right, Input.GetAxis("Mouse Y") * CameraSpeed);
-            }
+            //var cameraVerticalPitch = Mathf.Clamp();
+            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World); //RotateAround(Target.transform.position, -transform.right, Input.GetAxis("Mouse Y") * CameraSpeed);
+            //Quaternion PivotRotation = Pivot.transform.rotation;
 
 
-            transform.RotateAround(Planet.transform.position, Vector3.up, Input.GetAxis("Mouse X") * CameraSpeed);
+            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World); //RotateAround(Target.transform.position, Vector3.up, Input.GetAxis("Mouse X") * CameraSpeed);
 
         }
 
     }
+
+ 
     void PanCamera()
     {
 
@@ -76,7 +78,8 @@ public class CameraController : MonoBehaviour
         }
         else
         {
-            transform.LookAt(Planet.transform);
+            //transform.LookAt(Pivot.transform);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Pivot.transform.position - transform.position), 5 * Time.deltaTime);
         }
     }
 }
