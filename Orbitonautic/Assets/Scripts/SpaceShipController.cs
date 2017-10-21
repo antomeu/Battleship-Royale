@@ -13,6 +13,7 @@ namespace Assets.Scripts
         {
             transform.forward = Speed;
             ThrustersForce = ThrusterMultiplier * (Input.GetAxis("Horizontal") * transform.forward + Input.GetAxis("Sideway") * transform.right + Input.GetAxis("Vertical") * transform.up);
+            
         }
     }
 }

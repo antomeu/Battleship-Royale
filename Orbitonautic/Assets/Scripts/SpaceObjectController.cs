@@ -52,7 +52,8 @@ namespace Assets.Scripts
 
             ProjectedTrajectoryLine.positionCount = numberOfPoints;
 
-            // TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
+            //TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
+            //TODO: check if a point is inside a planet and stop trajectory there, and sen
             for (int i = 0; i < numberOfPoints; i++)
             {
                 NextObjectPosition += CalculatePositionDelta(NextSpeed, 20 * timeInterval);
@@ -72,7 +73,10 @@ namespace Assets.Scripts
             CalculateTrajectoryPoints(1024);
         }
 
-
+        void Start()
+        {
+            //TODO: get circular orbital speed
+        }
 
     }
 }

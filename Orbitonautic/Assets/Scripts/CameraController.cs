@@ -19,13 +19,11 @@ public class CameraController : MonoBehaviour
     float zoomTarget;
     float cameraDistanceTarget;
     float scrollProgress = 0.5f;
-
-    // Use this for initialization
+    
     void Start () {
 
     }
 	
-	// Update is called once per frame
 	void Update () {
         
         ZoomCamera();
@@ -40,7 +38,6 @@ public class CameraController : MonoBehaviour
     {
         float  velocity = 0f;
         scrollProgress = Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed) , 0f , 1f);
-        //scrollProgress *= scrollProgress;
         zoomTarget = Mathf.Lerp(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         Camera.fieldOfView = Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
@@ -57,13 +54,9 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))//Rotate camera
         {
-            //var cameraVerticalPitch = Mathf.Clamp();
-            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World); //RotateAround(Target.transform.position, -transform.right, Input.GetAxis("Mouse Y") * CameraSpeed);
-            //Quaternion PivotRotation = Pivot.transform.rotation;
-
-
-            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World); //RotateAround(Target.transform.position, Vector3.up, Input.GetAxis("Mouse X") * CameraSpeed);
-
+            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World); 
+            //TODO: lock vertical rotation maybe with these: // Quaternion PivotRotation = Pivot.transform.rotation;//var cameraVerticalPitch = Mathf.Clamp();
+            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World); 
         }
 
     }
