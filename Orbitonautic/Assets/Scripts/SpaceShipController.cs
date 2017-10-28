@@ -9,6 +9,7 @@ namespace Assets.Scripts
     class SpaceShipController : SpaceObjectController
     {
         public float ThrusterMultiplier = 20;
+        public Animator SpaceShipAnimator;
         void Update()
         {
             transform.forward = Speed;
@@ -17,6 +18,14 @@ namespace Assets.Scripts
                 + Input.GetAxis("Sideway") * transform.right 
                 + Input.GetAxis("Vertical") * transform.up);
             
+            SpaceShipAnimator.SetFloat("forward", Input.GetAxis("Horizontal"));
+            SpaceShipAnimator.SetFloat("backward", - Input.GetAxis("Horizontal"));
+
+            SpaceShipAnimator.SetFloat("up", Input.GetAxis("Vertical"));
+            SpaceShipAnimator.SetFloat("down", - Input.GetAxis("Vertical"));
+
+            SpaceShipAnimator.SetFloat("left", -Input.GetAxis("Sideway"));
+            SpaceShipAnimator.SetFloat("right", Input.GetAxis("Sideway"));
         }
     }
 }
