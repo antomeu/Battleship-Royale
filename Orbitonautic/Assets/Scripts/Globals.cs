@@ -7,6 +7,6 @@ namespace Assets.Scripts
 {
     public static class Globals
     {
-
+        public static float GravityConstant;
     }
 }

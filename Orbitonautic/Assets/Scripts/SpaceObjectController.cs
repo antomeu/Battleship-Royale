@@ -17,6 +17,8 @@ namespace Assets.Scripts
 
         public GravityController GravityController;
 
+        public bool IsOnCrashCourse = false;
+
         private float timeInterval = 0.05f;
 
         public Vector3 CalculateSpeedDelta(Vector3 sumOfForces, float timeInterval)
@@ -37,6 +39,13 @@ namespace Assets.Scripts
             foreach (CellestialBody CellestialBody in GravityController.CellestialBody)
             {
                 Vector3 objectToCellestialBodyVector = CellestialBody.transform.position - objectPosition; //Object to gravity body vector
+                if (objectToCellestialBodyVector.magnitude <= CellestialBody.Radius)
+                {
+                    IsOnCrashCourse = true;
+                    break;
+                }
+                else
+                    IsOnCrashCourse = false;
                 // Add each gravity body's gravitational force
                 sumOfForces += objectToCellestialBodyVector.normalized 
                     *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / objectToCellestialBodyVector.sqrMagnitude ; 
@@ -44,7 +53,7 @@ namespace Assets.Scripts
             return sumOfForces;
         }
 
-        private void CalculateTrajectoryPoints(int numberOfPoints)
+        private void CalculateTrajectoryPoints(int numberOfPoints, int skippedPoints) //Approximation multiplier is the number of predicted points that are skipped for projection
         {
             //Initialize first next point
             Vector3 NextSpeed = Speed; 
@@ -53,13 +62,18 @@ namespace Assets.Scripts
             ProjectedTrajectoryLine.positionCount = numberOfPoints;
 
             //TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
-            //TODO: check if a point is inside a planet and stop trajectory there, and sen
             for (int i = 0; i < numberOfPoints; i++)
             {
-                NextObjectPosition += CalculatePositionDelta(NextSpeed, 20 * timeInterval);
-                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) - ThrustersForce  , 20 * timeInterval);
-                    
+                NextObjectPosition += CalculatePositionDelta(NextSpeed, skippedPoints * timeInterval);
+                NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) - ThrustersForce  , skippedPoints * timeInterval);
+                if (IsOnCrashCourse)
+                {
+                    ProjectedTrajectoryLine.positionCount = i;
+                    break; //TODO: ALso display some crash icon on that location
+                }
                 ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
+
+
             }
             
         }
@@ -70,7 +84,7 @@ namespace Assets.Scripts
             Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
             
 
-            CalculateTrajectoryPoints(1024);
+            CalculateTrajectoryPoints(2048, 5);
         }
 
         void Start()
