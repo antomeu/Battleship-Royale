@@ -84,7 +84,7 @@ namespace Assets.Scripts
             Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
             
 
-            CalculateTrajectoryPoints(2048, 5);
+            CalculateTrajectoryPoints(512, 5);
         }
 
         void Start()
