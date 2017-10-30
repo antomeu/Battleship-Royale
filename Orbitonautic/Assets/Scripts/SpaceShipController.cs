@@ -12,7 +12,8 @@ namespace Assets.Scripts
         public Animator SpaceShipAnimator;
         void Update()
         {
-            transform.forward = Speed;
+            transform.forward = Speed; //TODO: set up vector to depend on main gravitational body orientation
+
             ThrustersForce = ThrusterMultiplier * (
                 Input.GetAxis("Horizontal") * transform.forward 
                 + Input.GetAxis("Sideway") * transform.right 

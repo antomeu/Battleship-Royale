@@ -15,9 +15,12 @@ namespace Assets.Scripts
 
         public LineRenderer ProjectedTrajectoryLine;
 
-        public GravityController GravityController;
+        public GameManager GameManager;
 
         public bool IsOnCrashCourse = false;
+
+        public int NumberOfTrajectoryPoints = 1024;
+        public int SkippedTrajectoryPoints = 2;
 
         private float timeInterval = 0.05f;
 
@@ -36,7 +39,7 @@ namespace Assets.Scripts
         private Vector3 CalculateSumOfForces(Vector3 objectPosition)
         {
             Vector3 sumOfForces = ThrustersForce;
-            foreach (CellestialBody CellestialBody in GravityController.CellestialBody)
+            foreach (CellestialBody CellestialBody in GameManager.GravityController.CellestialBody)
             {
                 Vector3 objectToCellestialBodyVector = CellestialBody.transform.position - objectPosition; //Object to gravity body vector
                 if (objectToCellestialBodyVector.magnitude <= CellestialBody.Radius)
@@ -84,7 +87,7 @@ namespace Assets.Scripts
             Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
             
 
-            CalculateTrajectoryPoints(512, 5);
+            CalculateTrajectoryPoints(NumberOfTrajectoryPoints, SkippedTrajectoryPoints );
         }
 
         void Start()

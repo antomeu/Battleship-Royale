@@ -10,7 +10,7 @@ namespace Assets.Scripts
     class UIManager : MonoBehaviour
     {
         public SpaceShipController OwnSpaceShip;
-
+        public GameManager Game;
         public Slider TimeSlider;
         public Text TimeText;
 
