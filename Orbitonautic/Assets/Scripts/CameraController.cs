@@ -41,10 +41,10 @@ public class CameraController : MonoBehaviour
     {
         float  velocity = 0f;
         scrollProgress =  Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f , 2f) ), 0f , 1f) ;
-        zoomTarget = Mathf.Lerp(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
+        zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         Camera.fieldOfView = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
-        cameraDistanceTarget = Mathf.Lerp(MinCameraDistance, MaxCameraDistance, scrollProgress);
+        cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
         transform.localPosition = new Vector3(0, 0, - cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
 
