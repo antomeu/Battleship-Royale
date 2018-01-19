@@ -63,7 +63,7 @@ namespace Assets.Scripts
             Vector3 NextObjectPosition = transform.position;
 
             ProjectedTrajectoryLine.positionCount = numberOfPoints;
-
+            //TODO: only update points every 30 updates or so and fade in the resulta
             //TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
             for (int i = 0; i < numberOfPoints; i++)
             {
