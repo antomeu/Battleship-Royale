@@ -8,23 +8,43 @@ namespace Assets.Scripts
 {
     class SpaceObjectController : MonoBehaviour
     {
-        public Vector3 Speed;
-        public Vector3 ThrustersForce;
-
-        public float SpaceObjectMass = 1;
-
-        public LineRenderer ProjectedTrajectoryLine;
-
+        #region Unity Fields
+        [Header("External References")]
         public GameManager GameManager;
 
+        [Header("Own References")]
+        public LineRenderer ProjectedTrajectoryLine;
+
+        [Header("Physics related settings")]
+        public Vector3 Speed;
+        public Vector3 ThrustersForce;
+        public float SpaceObjectMass = 1;
         public bool IsOnCrashCourse = false;
 
+        [Header("Trajectory Settings")]
         public int NumberOfTrajectoryPoints = 1024;
         public int SkippedTrajectoryPoints = 2;
-
         private float timeInterval = 0.05f;
+        #endregion
 
-        public Vector3 CalculateSpeedDelta(Vector3 sumOfForces, float timeInterval)
+        #region Unity Logic
+        void FixedUpdate()
+        {
+            transform.position += CalculatePositionDelta(Speed, timeInterval);
+            Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
+
+
+            CalculateTrajectoryPoints(NumberOfTrajectoryPoints, SkippedTrajectoryPoints);
+        }
+
+        void Start()
+        {
+            //TODO: get circular orbital speed
+        }
+        #endregion
+
+        #region Private  Logic
+        private Vector3 CalculateSpeedDelta(Vector3 sumOfForces, float timeInterval)
         {
             return  sumOfForces * (timeInterval / SpaceObjectMass); //Newton 2d law
         }
@@ -33,7 +53,6 @@ namespace Assets.Scripts
         {
             return currentSpeed * timeInterval;
         }
-
 
 
         private Vector3 CalculateSumOfForces(Vector3 objectPosition)
@@ -56,6 +75,7 @@ namespace Assets.Scripts
             return sumOfForces;
         }
 
+        //TODO: Create a class for trajectory calculation?
         private void CalculateTrajectoryPoints(int numberOfPoints, int skippedPoints) //Approximation multiplier is the number of predicted points that are skipped for projection
         {
             //Initialize first next point
@@ -63,7 +83,9 @@ namespace Assets.Scripts
             Vector3 NextObjectPosition = transform.position;
 
             ProjectedTrajectoryLine.positionCount = numberOfPoints;
-            //TODO: only update points every 30 updates or so and fade in the resulta
+            //TODO: only update points every 30 updates or so and fade in the result
+            //TODO: have a "recalculating" UI warning while calculating a limited number of points everyframe
+            //TODO: stop calculating points when the trajectory loops back on itself
             //TODO: only calculate all points if thrusters are on, otherwise only calculate the missing furthest point and remove the one behind
             for (int i = 0; i < numberOfPoints; i++)
             {
@@ -80,20 +102,8 @@ namespace Assets.Scripts
             }
             
         }
+        #endregion
 
-        void FixedUpdate()
-        {
-            transform.position += CalculatePositionDelta(Speed, timeInterval);
-            Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
-            
-
-            CalculateTrajectoryPoints(NumberOfTrajectoryPoints, SkippedTrajectoryPoints );
-        }
-
-        void Start()
-        {
-            //TODO: get circular orbital speed
-        }
 
     }
 }

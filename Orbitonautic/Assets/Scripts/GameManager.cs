@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Game Object References")]
     public CameraController CameraController;
     public GravityController GravityController;
 }

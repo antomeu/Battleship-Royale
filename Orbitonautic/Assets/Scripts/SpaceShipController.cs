@@ -8,8 +8,14 @@ namespace Assets.Scripts
 {
     class SpaceShipController : SpaceObjectController
     {
+        #region Unity Fields
+        [Header("Ship Properties")]
         public float ThrusterMultiplier = 20;
+        [Header("Own References")]
         public Animator SpaceShipAnimator;
+        #endregion
+
+        #region Unity Logic
         void Update()
         {
             transform.forward = Speed; //TODO: set up vector to depend on main gravitational body orientation
@@ -28,5 +34,6 @@ namespace Assets.Scripts
             SpaceShipAnimator.SetFloat("left", -Input.GetAxis("Sideway"));
             SpaceShipAnimator.SetFloat("right", Input.GetAxis("Sideway"));
         }
+        #endregion
     }
 }
