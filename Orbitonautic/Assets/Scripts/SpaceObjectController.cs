@@ -39,7 +39,7 @@ namespace Assets.Scripts
 
         void Start()
         {
-            //TODO: get circular orbital speed
+            //TODO: get circular orbital speed - 3 months later: why?
         }
         #endregion
 
