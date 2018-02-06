@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraMapController : MonoBehaviour
+public class CameraShipController : MonoBehaviour
 {
     #region Unity Fields
-    [Header("External References")]
-    public GameObject Pivot;
-    public GameObject Target;
+    [HeaderAttribute("References")]
     public Camera Camera;
     [Header("Movement")]
     public float ScrollSpeed = 50f;
@@ -33,10 +31,8 @@ public class CameraMapController : MonoBehaviour
         
         ZoomCamera();
 
-        RotateCamera();
         PanCamera();
 
-        Pivot.transform.position = Target.transform.position;
 
         //TODO: syncrhronize UI camera to main one
     }
@@ -56,34 +52,26 @@ public class CameraMapController : MonoBehaviour
         Camera.fieldOfView = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
-        transform.localPosition = new Vector3(0, 0, - cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
+        //transform.localPosition = new Vector3(0, 0, - cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
 
 
 
-    void RotateCamera()
-    {
-        if (Input.GetMouseButton(1))//Rotate camera
-        {
-            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World); 
-            //TODO: lock vertical rotation maybe with these: // Quaternion PivotRotation = Pivot.transform.rotation;//var cameraVerticalPitch = Mathf.Clamp();
-            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World); 
-        }
 
-    }
 
  
     void PanCamera()
     {
 
-        if (Input.GetMouseButton(2))//Pan camera
+        if (Input.GetMouseButton(0))//Pan camera
         {
-            transform.Rotate(new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")), Space.Self);
+            transform.Rotate(CameraRotateSpeed* new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")), Space.Self);
+            Debug.Log("Is clicked");
         }
         else
         {
             //transform.LookAt(Pivot.transform);
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Pivot.transform.position - transform.position), 5 * Time.deltaTime);
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(Pivot.transform.position - transform.position), 5 * Time.deltaTime);
         }
     }
     #endregion
