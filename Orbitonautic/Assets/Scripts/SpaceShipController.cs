@@ -12,6 +12,7 @@ namespace Assets.Scripts
         [Header("Ship Properties")]
         public float ThrusterMultiplier = 20;
         public bool IsFacingSpeedVector;
+        public float RotatingSpeed = 5;
         [Header("Own References")]
         public Animator SpaceShipAnimator;
         
@@ -46,7 +47,7 @@ namespace Assets.Scripts
                 + Input.GetAxis("Vertical") * transform.up
                 );
 
-            transform.Rotate(Input.GetAxis("RotateAroundMovementAxis")*Vector3.forward);
+            transform.Rotate(-RotatingSpeed * Input.GetAxis("RotateAroundMovementAxis")*Vector3.forward);
             //UpVector.
         }
 

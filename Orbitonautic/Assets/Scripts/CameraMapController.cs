@@ -7,7 +7,8 @@ public class CameraMapController : MonoBehaviour
     #region Unity Fields
     [Header("External References")]
     public GameObject Pivot;
-    public GameObject Target;
+    public Transform[] Targets;
+
     public Camera Camera;
     [Header("Movement")]
     public float ScrollSpeed = 50f;
@@ -37,7 +38,9 @@ public class CameraMapController : MonoBehaviour
         RotateCamera();
         PanCamera();
 
-        Pivot.transform.position = Target.transform.position;
+        foreach (Transform Target in Targets)
+            Pivot.transform.position += Target.position;
+        Pivot.transform.position /= (Targets.Length+1);
 
         //TODO: syncrhronize UI camera to main one
     }
