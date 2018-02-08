@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class CameraMapController : MonoBehaviour
@@ -51,7 +52,7 @@ public class CameraMapController : MonoBehaviour
     void ZoomCamera()
     {
         float  velocity = 0f;
-        scrollProgress =  Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f , 2f) ), 0f , 1f) ;
+        scrollProgress =  Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * Convert.ToInt32( Input.GetKeyDown("left ctrl") ) * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f , 2f) ), 0f , 1f) ;
         zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         Camera.fieldOfView = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 

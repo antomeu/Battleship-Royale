@@ -14,6 +14,7 @@ namespace Assets.Scripts
         public bool IsFacingSpeedVector;
         [Header("Own References")]
         public Animator SpaceShipAnimator;
+        
         #endregion
 
         #region Private Fields
@@ -25,7 +26,7 @@ namespace Assets.Scripts
         void Update()
         {
             if (IsFacingSpeedVector)
-                transform.forward = Speed; //TODO: set up vector to depend on main gravitational body orientation
+                transform.LookAt(transform.position + Speed, transform.up); //TODO: set up vector to depend on main gravitational body orientation
             Debug.Log(transform.localEulerAngles);
 
 
@@ -38,7 +39,12 @@ namespace Assets.Scripts
 
         void ActivateThrusters()
         {
-            ThrustersForce = ThrusterMultiplier * (    Input.GetAxis("Horizontal") * transform.forward    + Input.GetAxis("Sideway") * transform.right    + Input.GetAxis("Vertical") * transform.up);
+            ThrustersForce = ThrusterMultiplier * 
+                (    
+                Input.GetAxis("Horizontal") * transform.forward    
+                + Input.GetAxis("Sideway") * transform.right    
+                + Input.GetAxis("Vertical") * transform.up
+                );
 
             transform.Rotate(Input.GetAxis("RotateAroundMovementAxis")*Vector3.forward);
             //UpVector.
