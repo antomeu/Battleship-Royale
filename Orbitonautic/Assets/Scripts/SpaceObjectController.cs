@@ -24,10 +24,14 @@ namespace Assets.Scripts
         [Header("Trajectory Settings")]
         public int NumberOfTrajectoryPoints = 1024;
         public int SkippedTrajectoryPoints = 2;
-        private float timeInterval = 0.05f;
+        private float timeInterval;// = Time.fixedDeltaTime;// 0.05f;
         #endregion
 
         #region Unity Logic
+        void Awake()
+        {
+            timeInterval = Time.fixedDeltaTime;
+        }
         void FixedUpdate()
         {
             transform.position += CalculatePositionDelta(Speed, timeInterval);
