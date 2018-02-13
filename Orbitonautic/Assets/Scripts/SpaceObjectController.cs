@@ -98,7 +98,7 @@ namespace Assets.Scripts
                 if (IsOnCrashCourse)
                 {
                     ProjectedTrajectoryLine.positionCount = i;
-                    break; //TODO: ALso display some crash icon on that location
+                    break;//TODO: ALso display some crash icon on that location
                 }
                 ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
 
