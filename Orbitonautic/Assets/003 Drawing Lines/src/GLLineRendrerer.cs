@@ -46,14 +46,14 @@ public class GLLineRendrerer : MonoBehaviour
 
         for (int i = 0; i < Positions.Length; i++)
         {
-            GL.Vertex3(lp[i].x, lp[i].y, lp[i].z);
+            GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
         }
 
         GL.Color(new Color(0, 0, 0, 0.1f));
 
-        for (int i = 0; i < sp.Length; i++)
+        for (int i = 1; i < Positions.Length; i++)
         {
-            GL.Vertex3(sp[i].x, sp[i].y, sp[i].z);
+            GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
         }
 
         GL.End();
