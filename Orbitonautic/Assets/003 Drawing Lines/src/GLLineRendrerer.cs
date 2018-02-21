@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using System.Collections;
 
 public class GLLineRendrerer : MonoBehaviour
@@ -16,7 +17,7 @@ public class GLLineRendrerer : MonoBehaviour
         }
         set
         {
-            value = Positions.Length;
+            Array.Resize(ref Positions, value);
         }
     }
 
@@ -24,40 +25,39 @@ public class GLLineRendrerer : MonoBehaviour
     {
         Positions[index] = position;
     }
-
-
-
+    
     void Start()
     {
 
         material = new Material(shader);
 
     }
-
-
-
+    
     void OnPostRender()
     {
         material.SetPass(0);
-        GL.PushMatrix();
-        GL.MultMatrix(gameObject.transform.transform.localToWorldMatrix);
+        //GL.PushMatrix();
+        //GL.MultMatrix(transform.transform.localToWorldMatrix);
         GL.Begin(GL.LINES);
-        GL.Color(new Color(0, 0, 0, 0.4f));
+        GL.Color(new Color(1, 1, 1, 1.4f));
 
-        for (int i = 0; i < Positions.Length; i++)
-        {
-            GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
-        }
+        GL.Vertex3(transform.position.x, transform.position.y, transform.position.z);
 
-        GL.Color(new Color(0, 0, 0, 0.1f));
+        GL.Vertex3(transform.position.x + 1000f, transform.position.y, transform.position.z);
 
-        for (int i = 1; i < Positions.Length; i++)
-        {
-            GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
-        }
+        //for (int i = 0; i < Positions.Length-1; i++)
+        //{
+        //    GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
+        //}
+
+
+        //for (int i = 1; i < Positions.Length; i++)
+        //{
+        //    GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
+        //}
 
         GL.End();
-        GL.PopMatrix();
+        //GL.PopMatrix();
     }
 
 

@@ -13,7 +13,7 @@ namespace Assets.Scripts
         public GameManager GameManager;
 
         [Header("Own References")]
-        public LineRenderer ProjectedTrajectoryLine;
+        public GLLineRendrerer ProjectedTrajectoryLine;
 
         [Header("Physics related settings")]
         public Vector3 Speed;

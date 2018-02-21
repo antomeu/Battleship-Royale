@@ -28,9 +28,7 @@ namespace Assets.Scripts
         {
             if (IsFacingSpeedVector)
                 transform.LookAt(transform.position + Speed, transform.up); //TODO: set up vector to depend on main gravitational body orientation
-            Debug.Log(transform.localEulerAngles);
-
-
+            
             ActivateThrusters();
             Animate();
         }
