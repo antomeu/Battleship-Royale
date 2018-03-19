@@ -4,12 +4,14 @@ using System.Collections;
 
 public class GLLineRendrerer : MonoBehaviour
 {
+    [Header("External References")]
+
 
     public Shader shader;
     public Vector3[] Positions;
     public static Material material;
 
-    public int positionCount 
+    public int PositionCount 
     { 
         get
         {
@@ -36,25 +38,19 @@ public class GLLineRendrerer : MonoBehaviour
     void OnPostRender()
     {
         material.SetPass(0);
-        //GL.PushMatrix();
-        //GL.MultMatrix(transform.transform.localToWorldMatrix);
+        GL.PushMatrix();
+        GL.MultMatrix(transform.transform.localToWorldMatrix);
         GL.Begin(GL.LINES);
         GL.Color(new Color(1, 1, 1, 1.4f));
 
-        GL.Vertex3(transform.position.x, transform.position.y, transform.position.z);
-
-        GL.Vertex3(transform.position.x + 1000f, transform.position.y, transform.position.z);
-
+        
+        //foreach( orbit object)
         //for (int i = 0; i < Positions.Length-1; i++)
         //{
         //    GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
         //}
 
-
-        //for (int i = 1; i < Positions.Length; i++)
-        //{
-        //    GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
-        //}
+        
 
         GL.End();
         //GL.PopMatrix();

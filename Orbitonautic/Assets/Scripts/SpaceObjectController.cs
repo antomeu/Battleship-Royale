@@ -36,8 +36,7 @@ namespace Assets.Scripts
         {
             transform.position += CalculatePositionDelta(Speed, timeInterval);
             Speed += CalculateSpeedDelta(CalculateSumOfForces(transform.position), timeInterval);
-
-
+            
             CalculateTrajectoryPoints(NumberOfTrajectoryPoints, SkippedTrajectoryPoints);
         }
 
@@ -86,7 +85,7 @@ namespace Assets.Scripts
             Vector3 NextSpeed = Speed; 
             Vector3 NextObjectPosition = transform.position;
 
-            ProjectedTrajectoryLine.positionCount = numberOfPoints;
+            ProjectedTrajectoryLine.PositionCount = numberOfPoints;
             //TODO: only update points every 30 updates or so and fade in the result
             //TODO: have a "recalculating" UI warning while calculating a limited number of points everyframe
             //TODO: stop calculating points when the trajectory loops back on itself
@@ -97,7 +96,7 @@ namespace Assets.Scripts
                 NextSpeed += CalculateSpeedDelta(CalculateSumOfForces(NextObjectPosition) - ThrustersForce  , skippedPoints * timeInterval);
                 if (IsOnCrashCourse)
                 {
-                    ProjectedTrajectoryLine.positionCount = i;
+                    ProjectedTrajectoryLine.PositionCount = i;
                     break;//TODO: ALso display some crash icon on that location
                 }
                 ProjectedTrajectoryLine.SetPosition(i, NextObjectPosition);
