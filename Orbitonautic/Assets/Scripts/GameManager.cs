@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+namespace Assets.Scripts
 {
-    [Header("Game Object References")]
-    public CameraMapController CameraController;
-    public GravityController GravityController;
+    public class GameManager : MonoBehaviour
+    {
+        [Header("Game Object References")]
+        public CameraMapController CameraController;
+        public GravityController GravityController;
+        public List<Trajectory> Trajectories;
+    }
 }

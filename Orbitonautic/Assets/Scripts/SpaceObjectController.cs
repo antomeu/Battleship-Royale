@@ -13,7 +13,7 @@ namespace Assets.Scripts
         public GameManager GameManager;
 
         [Header("Own References")]
-        public GLLineRendrerer ProjectedTrajectoryLine;
+        public Trajectory ProjectedTrajectoryLine;
 
         [Header("Physics related settings")]
         public Vector3 Speed;
@@ -42,7 +42,7 @@ namespace Assets.Scripts
 
         void Start()
         {
-            //TODO: get circular orbital speed - 3 months later: why?
+            GameManager.Trajectories.Add(ProjectedTrajectoryLine);
         }
         #endregion
 

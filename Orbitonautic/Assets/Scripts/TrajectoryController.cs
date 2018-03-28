@@ -6,9 +6,9 @@ using UnityEngine;
 
 namespace Assets.Scripts 
 {
-    class SpaceObjectTrajectory
+    public class Trajectory
     {
-        Vector3[] Positions;
+        public Vector3[] Positions;
 
         public int PositionCount
         {
@@ -22,9 +22,9 @@ namespace Assets.Scripts
             }
         }
 
-        void SetPosition(int i, Vector3 position)
+        public void SetPosition(int index, Vector3 position)
         {
-            
+            Positions[index] = position;
         }
     }
 }
