@@ -51,7 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\003 Drawing Lines\src\GLLineRendrerer.cs" />
+     <Compile Include="Assets\003 Drawing Lines\src\GLLineOnCameraRendrerer.cs" />
      <Compile Include="Assets\003 Drawing Lines\src\LinesGL.cs" />
      <Compile Include="Assets\003 Drawing Lines\src\LinesGR.cs" />
      <Compile Include="Assets\003 Drawing Lines\src\LinesLR.cs" />
@@ -147,8 +147,8 @@
      <Compile Include="Assets\Scripts\Globals.cs" />
      <Compile Include="Assets\Scripts\GravityController.cs" />
      <Compile Include="Assets\Scripts\SpaceObjectController.cs" />
-     <Compile Include="Assets\Scripts\SpaceObjectTrajectory.cs" />
      <Compile Include="Assets\Scripts\SpaceShipController.cs" />
+     <Compile Include="Assets\Scripts\TrajectoryController.cs" />
      <Compile Include="Assets\Scripts\UIBillboard.cs" />
      <Compile Include="Assets\Scripts\UIManager.cs" />
      <None Include="Assets\Art\Extrenal Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
