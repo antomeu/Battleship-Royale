@@ -33,7 +33,7 @@ namespace Assets.Scripts
             //{
             //    GL.Vertex3(Positions[i].x, Positions[i].y, Positions[i].z);
             //}
-            foreach(Trajectory trajectory in GameManager.Trajectories)
+            foreach(TrajectoryController trajectory in GameManager.Trajectories)
             {
                 for (int i = 0; i < trajectory.Positions.Length - 1; i++)
                 {

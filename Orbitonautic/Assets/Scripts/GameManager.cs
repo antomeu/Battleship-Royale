@@ -10,6 +10,6 @@ namespace Assets.Scripts
         [Header("Game Object References")]
         public CameraMapController CameraController;
         public GravityController GravityController;
-        public List<Trajectory> Trajectories;
+        public List<TrajectoryController> Trajectories;
     }
 }

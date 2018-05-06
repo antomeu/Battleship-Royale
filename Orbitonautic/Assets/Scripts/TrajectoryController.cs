@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Scripts 
 {
-    public class Trajectory
+    public class TrajectoryController : MonoBehaviour
     {
         public Vector3[] Positions;
 

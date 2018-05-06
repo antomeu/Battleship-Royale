@@ -12,8 +12,8 @@ namespace Assets.Scripts
         [Header("External References")]
         public GameManager GameManager;
 
-        [Header("Own References")]
-        public Trajectory ProjectedTrajectoryLine;
+        [Header("Own Generic References")]
+        public TrajectoryController ProjectedTrajectoryLine;
 
         [Header("Physics related settings")]
         public Vector3 Speed;
