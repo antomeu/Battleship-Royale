@@ -43,7 +43,7 @@ namespace Assets.Scripts
 
 
             GL.End();
-            //GL.PopMatrix();
+            GL.PopMatrix();
         }
 
 
