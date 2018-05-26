@@ -23,7 +23,7 @@ namespace Assets.Scripts
         {
             material.SetPass(0);
             GL.PushMatrix();
-            GL.MultMatrix(transform.transform.localToWorldMatrix);
+            GL.MultMatrix(GameManager.GravityController.transform.localToWorldMatrix);
             GL.Begin(GL.LINES);
             GL.Color(new Color(1, 1, 1, 1.4f));
 
