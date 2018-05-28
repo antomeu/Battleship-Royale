@@ -35,9 +35,10 @@ namespace Assets.Scripts
             //}
             foreach(TrajectoryController trajectory in GameManager.Trajectories)
             {
-                for (int i = 0; i < trajectory.Positions.Length - 1; i++)
+                for (int i = 0; i < trajectory.Positions.Length - 2; i++)
                 {
                     GL.Vertex3(trajectory.Positions[i].x, trajectory.Positions[i].y, trajectory.Positions[i].z);
+                    GL.Vertex3(trajectory.Positions[i+1].x, trajectory.Positions[i+1].y, trajectory.Positions[i+1].z);
                 }
             }
 
