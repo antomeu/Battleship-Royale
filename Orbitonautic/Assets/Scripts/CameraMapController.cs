@@ -33,7 +33,7 @@ public class CameraMapController : MonoBehaviour
 
     void Update () {
 
-        Camera.orthographicSize = 1.5f * (Targets[0].position - Targets[1].position).magnitude;
+        Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
 
         ZoomCamera();
 

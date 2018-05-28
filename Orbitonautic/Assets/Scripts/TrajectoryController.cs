@@ -9,6 +9,7 @@ namespace Assets.Scripts
     public class TrajectoryController : MonoBehaviour
     {
         public Vector3[] Positions;
+        public Color LineColor;
 
         public int PositionCount
         {

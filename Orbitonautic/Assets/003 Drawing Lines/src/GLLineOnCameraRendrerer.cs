@@ -25,7 +25,7 @@ namespace Assets.Scripts
             GL.PushMatrix();
             GL.MultMatrix(GameManager.GravityController.transform.localToWorldMatrix);
             GL.Begin(GL.LINES);
-            GL.Color(new Color(1, 1, 1, 1.4f));
+            
 
 
             //foreach( orbit object)
@@ -35,6 +35,7 @@ namespace Assets.Scripts
             //}
             foreach(TrajectoryController trajectory in GameManager.Trajectories)
             {
+                GL.Color(trajectory.LineColor);
                 for (int i = 0; i < trajectory.Positions.Length - 2; i++)
                 {
                     GL.Vertex3(trajectory.Positions[i].x, trajectory.Positions[i].y, trajectory.Positions[i].z);
