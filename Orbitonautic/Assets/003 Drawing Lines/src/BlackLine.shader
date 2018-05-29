@@ -1,4 +1,4 @@
-Shader "My/BlackLine" {
+Shader "Lines/LineBase" {
 	
 	// A simple shader to draw lines 
 	// (backface culling and lightning are turned off)

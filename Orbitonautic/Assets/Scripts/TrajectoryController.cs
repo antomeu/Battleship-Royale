@@ -10,6 +10,7 @@ namespace Assets.Scripts
     {
         public Vector3[] Positions;
         public Color LineColor;
+        public Material LineMaterial;
 
         public int PositionCount
         {

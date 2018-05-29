@@ -21,10 +21,7 @@ namespace Assets.Scripts
 
         void OnPostRender()
         {
-            material.SetPass(0);
-            GL.PushMatrix();
-            GL.MultMatrix(GameManager.GravityController.transform.localToWorldMatrix);
-            GL.Begin(GL.LINES);
+
             
 
 
@@ -35,17 +32,26 @@ namespace Assets.Scripts
             //}
             foreach(TrajectoryController trajectory in GameManager.Trajectories)
             {
+                
+                material = trajectory.LineMaterial  ;
+                material.SetPass(0);
+                GL.PushMatrix();
+                GL.MultMatrix(GameManager.GravityController.transform.localToWorldMatrix);
+                GL.Begin(GL.LINES);
+
                 GL.Color(trajectory.LineColor);
                 for (int i = 0; i < trajectory.Positions.Length - 2; i++)
                 {
                     GL.Vertex3(trajectory.Positions[i].x, trajectory.Positions[i].y, trajectory.Positions[i].z);
                     GL.Vertex3(trajectory.Positions[i+1].x, trajectory.Positions[i+1].y, trajectory.Positions[i+1].z);
                 }
+
+                GL.End();
+                GL.PopMatrix();
             }
 
 
-            GL.End();
-            GL.PopMatrix();
+
         }
 
 
