@@ -34,12 +34,13 @@ namespace Assets.Scripts
             {
                 
                 material = trajectory.LineMaterial  ;
-                material.SetPass(0);
                 GL.PushMatrix();
+                material.SetPass(0);
+
                 GL.MultMatrix(GameManager.GravityController.transform.localToWorldMatrix);
                 GL.Begin(GL.LINES);
 
-                GL.Color(trajectory.LineColor);
+                GL.Color(256*trajectory.LineColor);
                 for (int i = 0; i < trajectory.Positions.Length - 2; i++)
                 {
                     GL.Vertex3(trajectory.Positions[i].x, trajectory.Positions[i].y, trajectory.Positions[i].z);
