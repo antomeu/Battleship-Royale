@@ -26,12 +26,14 @@ public class CameraMapController : MonoBehaviour
     #endregion
 
     #region Unity Logic
-    void Start () {
+    void Start()
+    {
 
     }
-    
 
-    void Update () {
+
+    void Update()
+    {
 
         Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
 
@@ -42,7 +44,7 @@ public class CameraMapController : MonoBehaviour
 
         foreach (Transform Target in Targets)
             Pivot.transform.position += Target.position;
-        Pivot.transform.position /= (Targets.Length+1);
+        Pivot.transform.position /= (Targets.Length + 1);
 
         //TODO: syncrhronize UI camera to main one
     }
@@ -53,16 +55,19 @@ public class CameraMapController : MonoBehaviour
     }
     #endregion
 
+    #region Public Logic
+    #endregion
+
     #region Private Logic
     void ZoomCamera()
     {
-        float  velocity = 0f;
-        scrollProgress =  Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * Convert.ToInt32( Input.GetKeyDown("left ctrl") ) * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f , 2f) ), 0f , 1f) ;
+        float velocity = 0f;
+        scrollProgress = Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * Convert.ToInt32(Input.GetKeyDown("left ctrl")) * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f, 2f)), 0f, 1f);
         zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         Camera.fieldOfView = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
-        transform.localPosition = new Vector3(0, 0, - cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
+        transform.localPosition = new Vector3(0, 0, -cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
 
 
@@ -71,14 +76,14 @@ public class CameraMapController : MonoBehaviour
     {
         if (Input.GetMouseButton(1))//Rotate camera
         {
-            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World); 
+            Pivot.transform.Rotate(Input.GetAxis("Mouse Y") * CameraRotateSpeed * Pivot.transform.right, Space.World);
             //TODO: lock vertical rotation maybe with these: // Quaternion PivotRotation = Pivot.transform.rotation;//var cameraVerticalPitch = Mathf.Clamp();
-            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World); 
+            Pivot.transform.Rotate(Input.GetAxis("Mouse X") * CameraRotateSpeed * Vector3.up, Space.World);
         }
 
     }
 
- 
+
     void PanCamera()
     {
 
