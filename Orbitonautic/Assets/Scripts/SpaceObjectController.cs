@@ -72,7 +72,8 @@ namespace Assets.Scripts
                 else
                     IsOnCrashCourse = false;
                 // Add each gravity body's gravitational force
-                sumOfForces += objectToCellestialBodyVector.normalized 
+                if (objectToCellestialBodyVector.magnitude <= 5000)
+                    sumOfForces += objectToCellestialBodyVector.normalized 
                     *  CellestialBody.MassTimesGravityConstant * SpaceObjectMass / objectToCellestialBodyVector.sqrMagnitude ; 
             }
             return sumOfForces;
