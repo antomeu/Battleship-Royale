@@ -40,10 +40,10 @@ public class CameraShipController : MonoBehaviour
         //TODO: syncrhronize UI camera to main one
     }
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(0, 0, 100, 100), scrollProgress.ToString());
-    }
+    //void OnGUI()
+    //{
+    //    GUI.Label(new Rect(0, 0, 100, 100), scrollProgress.ToString());
+    //}
     #endregion
 
     #region Private Logic

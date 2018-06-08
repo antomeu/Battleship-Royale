@@ -37,7 +37,7 @@ public class CameraMapController : MonoBehaviour
 
         Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
 
-        ZoomCamera();
+        ZoomCamera(1);
 
         RotateCamera();
         PanCamera();
@@ -51,21 +51,28 @@ public class CameraMapController : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(0, 0, 100, 100), scrollProgress.ToString());
+        GUI.Label(new Rect(Screen.width-20, 0, 100, 100), scrollProgress.ToString());
     }
     #endregion
 
     #region Public Logic
+    public void ZoomControl(float zoomDirection)
+    {
+        ZoomCamera(zoomDirection);
+    }
     #endregion
 
     #region Private Logic
-    void ZoomCamera()
+    void ZoomCamera(float zoomDirection)
     {
-        float velocity = 0f;
-        scrollProgress = Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * Convert.ToInt32(Input.GetKeyDown("left ctrl")) * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f, 2f)), 0f, 1f);
-        zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
-        Camera.fieldOfView = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
+        //var CameraMapZoomKeyInput = Input.GetAxis("Mouse ScrollWheel") * Convert.ToInt32(Input.GetKeyDown(KeyCode.LeftShift));
+        //if (CameraMapZoomKeyInput != 0f)
+        //    scrollProgress = Mathf.Clamp(scrollProgress - (CameraMapZoomKeyInput * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f, 2f)), 0f, 1f);
 
+        //zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
+        //Camera.orthographicSize = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
+
+        scrollProgress += zoomDirection;
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
         transform.localPosition = new Vector3(0, 0, -cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
