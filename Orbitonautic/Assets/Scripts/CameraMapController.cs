@@ -28,7 +28,7 @@ public class CameraMapController : MonoBehaviour
     #region Unity Logic
     void Start()
     {
-
+        ZoomCamera(scrollProgress);
     }
 
 
@@ -37,7 +37,7 @@ public class CameraMapController : MonoBehaviour
 
         Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
 
-        ZoomCamera(1);
+        
 
         RotateCamera();
         PanCamera();
@@ -72,7 +72,8 @@ public class CameraMapController : MonoBehaviour
         //zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         //Camera.orthographicSize = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
-        scrollProgress += zoomDirection;
+        scrollProgress -= zoomDirection/10;
+        scrollProgress = Mathf.Clamp(scrollProgress,0f,1f);
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
         transform.localPosition = new Vector3(0, 0, -cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
