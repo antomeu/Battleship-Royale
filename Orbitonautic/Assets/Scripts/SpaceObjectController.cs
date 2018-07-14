@@ -14,6 +14,8 @@ namespace Assets.Scripts
 
         [Header("Own Generic References")]
         public TrajectoryController ProjectedTrajectoryLine;
+        public GameObject MapIndicator;
+
 
         [Header("Physics related settings")]
         public Vector3 Speed;
