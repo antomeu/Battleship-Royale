@@ -17,31 +17,31 @@ public class LinesLR : MonoBehaviour {
 	
 	private ArrayList points;
 	
-	GUIStyle labelStyle;
-	GUIStyle linkStyle;
+	//GUIStyle labelStyle;
+	//GUIStyle linkStyle;
 	
 	private float speed = 100f;
 
 	void Start () {
-		labelStyle = new GUIStyle();
-		labelStyle.normal.textColor = Color.black;
+		//labelStyle = new GUIStyle();
+		//labelStyle.normal.textColor = Color.black;
 		
-		linkStyle = new GUIStyle();
-		linkStyle.normal.textColor = Color.blue;
+		//linkStyle = new GUIStyle();
+		//linkStyle.normal.textColor = Color.blue;
 		
 		points = new ArrayList();
 	}
 	
-	void OnGUI() {
-		GUI.Label (new Rect (10, 10, 300, 24), "LR. Cursor keys to rotate (with Shift for slow)", labelStyle);
-		int vc = canvasIndex + points.Count; 
-		GUI.Label (new Rect (10, 26, 300, 24), "Drawin " + vc + " lines. 'C' to clear", labelStyle);
+	//void OnGUI() {
+	//	GUI.Label (new Rect (10, 10, 300, 24), "LR. Cursor keys to rotate (with Shift for slow)", labelStyle);
+	//	int vc = canvasIndex + points.Count; 
+	//	GUI.Label (new Rect (10, 26, 300, 24), "Drawin " + vc + " lines. 'C' to clear", labelStyle);
 		
-		GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
-		if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
-			Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
-		}
-	}
+	//	GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
+	//	if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
+	//		Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
+	//	}
+	//}
 	
 	void Update () {
 		float sp = speed * Time.deltaTime;

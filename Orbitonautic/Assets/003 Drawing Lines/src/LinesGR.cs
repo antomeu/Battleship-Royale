@@ -20,8 +20,8 @@ public class LinesGR : MonoBehaviour {
 
 	private float lineSize = 0.03f;
 	
-	private GUIStyle labelStyle;
-	private GUIStyle linkStyle;
+	//private GUIStyle labelStyle;
+	//private GUIStyle linkStyle;
 	
 	private Point first;
 	
@@ -29,11 +29,11 @@ public class LinesGR : MonoBehaviour {
 
 
 	void Start () {
-		labelStyle = new GUIStyle();
-		labelStyle.normal.textColor = Color.black;
+		//labelStyle = new GUIStyle();
+		//labelStyle.normal.textColor = Color.black;
 		
-		linkStyle = new GUIStyle();
-		linkStyle.normal.textColor = Color.blue;
+		//linkStyle = new GUIStyle();
+		//linkStyle.normal.textColor = Color.blue;
 		
 		ml = new Mesh();
 		lmat = new Material(shader);
@@ -166,16 +166,16 @@ public class LinesGR : MonoBehaviour {
 		return nvs;
 	}
 	
-	void OnGUI() {
-		GUI.Label (new Rect (10, 10, 300, 24), "GR. Cursor keys to rotate (fast with Shift)", labelStyle);
-		int vc = ml.vertices.Length + ms.vertices.Length;
-		GUI.Label (new Rect (10, 26, 300, 24), "Drawing " + vc + " vertices. 'C' to clear", labelStyle);
+	//void OnGUI() {
+	//	GUI.Label (new Rect (10, 10, 300, 24), "GR. Cursor keys to rotate (fast with Shift)", labelStyle);
+	//	int vc = ml.vertices.Length + ms.vertices.Length;
+	//	GUI.Label (new Rect (10, 26, 300, 24), "Drawing " + vc + " vertices. 'C' to clear", labelStyle);
 		
-		GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
-		if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
-			Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
-		}
-	}
+	//	GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
+	//	if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
+	//		Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
+	//	}
+	//}
 	
 	/** Replace the Update function with this one for a click&drag drawing option */
 	void Update1() {
