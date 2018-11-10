@@ -42,10 +42,10 @@ public class CameraMapController : MonoBehaviour
         RotateCamera();
         PanCamera();
 
-        foreach (Transform Target in Targets)
-            Pivot.transform.position += Target.position;
-        Pivot.transform.position /= (Targets.Length + 1);
-
+        //foreach (Transform Target in Targets)
+        //    Pivot.transform.position += Target.position;
+        //Pivot.transform.position /= (Targets.Length + 1);
+        Pivot.transform.position = Targets[0].transform.position;
         //TODO: syncrhronize UI camera to main one
     }
 
