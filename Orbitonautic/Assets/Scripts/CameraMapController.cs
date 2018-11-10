@@ -8,7 +8,6 @@ public class CameraMapController : MonoBehaviour
     [Header("External References")]
     public GameObject Pivot;
     public Transform[] Targets;
-
     public Camera Camera;
     [Header("Movement")]
     public float ScrollSpeed = 50f;
@@ -35,9 +34,10 @@ public class CameraMapController : MonoBehaviour
     void Update()
     {
 
-        Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
+        if (Targets.Length > 1)
+            Camera.orthographicSize = 3f * (Targets[0].position - Targets[1].position).magnitude;
 
-        
+
 
         RotateCamera();
         PanCamera();
@@ -49,10 +49,10 @@ public class CameraMapController : MonoBehaviour
         //TODO: syncrhronize UI camera to main one
     }
 
-    void OnGUI()
-    {
-        GUI.Label(new Rect(Screen.width-20, 0, 100, 100), scrollProgress.ToString());
-    }
+    //void OnGUI()
+    //{
+    //    GUI.Label(new Rect(Screen.width-20, 0, 100, 100), scrollProgress.ToString());
+    //}
     #endregion
 
     #region Public Logic
@@ -72,8 +72,8 @@ public class CameraMapController : MonoBehaviour
         //zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
         //Camera.orthographicSize = zoomTarget; // Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
-        scrollProgress -= zoomDirection/10;
-        scrollProgress = Mathf.Clamp(scrollProgress,0f,1f);
+        scrollProgress -= zoomDirection / 10;
+        scrollProgress = Mathf.Clamp(scrollProgress, 0f, 1f);
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
         transform.localPosition = new Vector3(0, 0, -cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }

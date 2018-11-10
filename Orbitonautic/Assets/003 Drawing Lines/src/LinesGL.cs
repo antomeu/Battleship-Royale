@@ -12,15 +12,15 @@ public class LinesGL : MonoBehaviour {
 	private Vector3[] sp;
 	private Vector3 s;
 
-	private GUIStyle labelStyle;
-	private GUIStyle linkStyle;
+	//private GUIStyle labelStyle;
+	//private GUIStyle linkStyle;
 	
 	void Start () {
-		labelStyle = new GUIStyle();
-		labelStyle.normal.textColor = Color.black;
+		//labelStyle = new GUIStyle();
+		//labelStyle.normal.textColor = Color.black;
 		
-		linkStyle = new GUIStyle();
-		linkStyle.normal.textColor = Color.blue;
+		//linkStyle = new GUIStyle();
+		//linkStyle.normal.textColor = Color.blue;
 		
 		m = new Material(shader);
 		g = new GameObject("g");
@@ -131,15 +131,15 @@ public class LinesGL : MonoBehaviour {
 		GL.PopMatrix();
 	} 
 	
-	void OnGUI() {
-		GUI.Label (new Rect (10, 10, 300, 24), "GL. Cursor keys to rotate (with Shift for slow)", labelStyle);
-		int vc = lp.Length + sp.Length;
-		GUI.Label (new Rect (10, 26, 300, 24), "Pushing " + vc + " vertices. 'C' to clear", labelStyle);
+	//void OnGUI() {
+	//	GUI.Label (new Rect (10, 10, 300, 24), "GL. Cursor keys to rotate (with Shift for slow)", labelStyle);
+	//	int vc = lp.Length + sp.Length;
+	//	GUI.Label (new Rect (10, 26, 300, 24), "Pushing " + vc + " vertices. 'C' to clear", labelStyle);
 		
-		GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
-		if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
-			Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
-		}
-	}
+	//	GUI.Label (new Rect (10, Screen.height - 20, 250, 24), ".Inspired by a demo from ", labelStyle);
+	//	if(GUI.Button (new Rect (150, Screen.height - 20, 300, 24), "mrdoob", linkStyle)) {
+	//		Application.OpenURL("http://mrdoob.com/lab/javascript/harmony/");
+	//	}
+	//}
 
 }

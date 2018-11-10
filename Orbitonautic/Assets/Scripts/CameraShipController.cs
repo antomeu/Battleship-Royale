@@ -25,17 +25,18 @@ public class CameraShipController : MonoBehaviour
     #endregion
 
     #region Unity Logic
-    void Start () {
+    void Start()
+    {
 
     }
-    
 
-    void Update () {
-        
+
+    void Update()
+    {
+
         ZoomCamera();
 
         PanCamera();
-
 
         //TODO: syncrhronize UI camera to main one
     }
@@ -49,15 +50,15 @@ public class CameraShipController : MonoBehaviour
     #region Private Logic
     void ZoomCamera()
     {
-        float  velocity = 10f;
-        scrollProgress =  Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f , 2f) ), 0f , 1f) ;
+        float velocity = 10f;
+        scrollProgress = Mathf.Clamp(scrollProgress - (Input.GetAxis("Mouse ScrollWheel") * ScrollSpeed * Mathf.Pow(scrollProgress + 0.1f, 2f)), 0f, 1f);
         zoomTarget = Mathf.SmoothStep(MinCameraFieldOfView, MaxCameraFieldOfView, scrollProgress);
-        Camera.fieldOfView =  Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
+        Camera.fieldOfView = Mathf.SmoothDamp(Camera.fieldOfView, zoomTarget, ref velocity, 0.1f);
 
         cameraDistanceTarget = Mathf.SmoothStep(MinCameraDistance, MaxCameraDistance, scrollProgress);
         //transform.localPosition = new Vector3(0, 0, - cameraDistanceTarget); //Mathf.SmoothDamp(transform.position.z, cameraDistanceTarget, ref velocity, 0.1f));
     }
-    
+
     void PanCamera()
     {
 
@@ -67,7 +68,11 @@ public class CameraShipController : MonoBehaviour
             transform.Rotate(PanSpeed * new Vector3(-Input.GetAxis("Mouse Y"), Input.GetAxis("Mouse X")), Space.Self);
             transform.localRotation = Quaternion.Euler(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y, 0);
         }
-        
+
+
+    }
+
+    void ShakeCamera(float strength){
 
     }
     #endregion

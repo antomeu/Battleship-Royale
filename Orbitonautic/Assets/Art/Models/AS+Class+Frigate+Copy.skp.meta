@@ -1,30 +1,1016 @@
 fileFormatVersion: 2
 guid: 48e6657075c6bbd4dabfe8dcbe0f6cf6
-timeCreated: 1518210247
-licenseType: Free
 SketchUpImporter:
   generateBackFace: 0
   mergeCoplanarFaces: 0
-  selectedNodes: 
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f000000900000009100000092000000930000009400000095000000960000009700000098000000990000009a0000009b0000009c0000009d0000009e0000009f000000a0000000a1000000a2000000a3000000a4000000a5000000a6000000a7000000a8000000a9000000aa000000ab000000ac000000ad000000ae000000af000000b0000000b1000000b2000000b3000000b4000000b5000000b6000000b7000000b8000000b9000000ba000000bb000000bc000000bd000000be000000bf000000c0000000c1000000c2000000c3000000c4000000c5000000c6000000c7000000c8000000c9000000ca000000cb000000cc000000cd000000ce000000cf000000d0000000d1000000d2000000d3000000d4000000d5000000d6000000d7000000d8000000d9000000da000000db000000dc000000dd000000de000000df000000e0000000e1000000e2000000e3000000e4000000e5000000e6000000e7000000e8000000e9000000ea000000eb000000ec000000ed000000ee000000ef000000f0000000f1000000f2000000f3000000f4000000f5000000f6000000f7000000f8000000f9000000fa000000fb000000fc000000fd000000fe000000ff000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f010000300100003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009b0100009c0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000d0010000d1010000d2010000
   assetHash:
     serializedVersion: 2
-    Hash: 455b56be6307cfc70740c3780fbcdfb0
-  longitude: 0
-  latitude: 0
-  northCorrection: 0
+    Hash: a9b9e4b2b71f633357d76698a6a74f32
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
   fileUnit: 0
   sketchUpImportData:
     defaultCamera:
-      position: {x: 0, y: 0, z: 0}
-      lookAt: {x: 0, y: 0, z: 1}
-      up: {x: 0, y: 1, z: 0}
-      fov: 45
-      aspectRatio: 1.33
-      orthoSize: 0
+      position: {x: 99.5886, y: -2.8583186, z: -32.971542}
+      lookAt: {x: 38.964237, y: 16.348444, z: 56.5691}
+      up: {x: 0.098047465, y: 0.9845891, z: -0.14481363}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
       isPerspective: 1
     scenes: []
-  serializedVersion: 22
-  fileIDToRecycleName: {}
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 10m Arm Dextorous
+    100002: 10m Arm Dextorous 1
+    100004: 10m Arm Segment
+    100006: 10m Arm Segment 1
+    100008: 10m Arm Segment 2
+    100010: 10m Arm Segment 3
+    100012: 2m Docking Port
+    100014: Arm - Hand
+    100016: Arm - Hand 1
+    100018: Arm / Strong
+    100020: Arm Dextorous
+    100022: Arm Finger
+    100024: Arm Finger 1
+    100026: Arm Finger 2
+    100028: Arm Finger 3
+    100030: Arm Finger 4
+    100032: Arm Finger 5
+    100034: Arm Joint / Straight
+    100036: Arm Joint / Straight 1
+    100038: Arm Joint / Straight 2
+    100040: Arm Joint / Straight 3
+    100042: Arm Joint/90 Degree
+    100044: Arm Joint/90 Degree 1
+    100046: Arm Joint/90 Degree 2
+    100048: Arm Joint/90 Degree 3
+    100050: Arm Joint/90 Degree 4
+    100052: Arm Joint/90 Degree 5
+    100054: Arm Joint/90 Degree 6
+    100056: Arm Joint/90 Degree 7
+    100058: Arm Joint/90 Degree 8
+    100060: Arm Joint/90 Degree 9
+    100062: Arm Root
+    100064: Arm Root 1
+    100066: AS Frigate Configuration
+    100068: //RootNode
+    100070: Battery Pack
+    100072: Battery Pack 1
+    100074: Bay Doors
+    100076: Center Pod
+    100078: Command Module
+    100080: Engine Pod
+    100082: Engine Pod 1
+    100084: Fuel Tank
+    100086: Fuel Tank 1
+    100088: Group 108
+    100090: Group 110
+    100092: Group 132
+    100094: Group 134
+    100096: Group 138
+    100098: Group 148
+    100100: Group 150
+    100102: Group 169
+    100104: Group 171
+    100106: Group 193
+    100108: Group 195
+    100110: Group 21
+    100112: Group 216
+    100114: Group 219
+    100116: Group 221
+    100118: Group 223
+    100120: Group 225
+    100122: Group 228
+    100124: Group 230
+    100126: Group 232
+    100128: Group 234
+    100130: Group 237
+    100132: Group 239
+    100134: Group 241
+    100136: Group 243
+    100138: Group 246
+    100140: Group 248
+    100142: Group 250
+    100144: Group 252
+    100146: Group 255
+    100148: Group 257
+    100150: Group 259
+    100152: Group 261
+    100154: Group 264
+    100156: Group 266
+    100158: Group 268
+    100160: Group 270
+    100162: Group 279
+    100164: Group 282
+    100166: Group 284
+    100168: Group 286
+    100170: Group 288
+    100172: Group 291
+    100174: Group 293
+    100176: Group 295
+    100178: Group 297
+    100180: Group 300
+    100182: Group 302
+    100184: Group 304
+    100186: Group 306
+    100188: Group 309
+    100190: Group 311
+    100192: Group 313
+    100194: Group 315
+    100196: Group 318
+    100198: Group 320
+    100200: Group 322
+    100202: Group 324
+    100204: Group 327
+    100206: Group 329
+    100208: Group 331
+    100210: Group 333
+    100212: Group 340
+    100214: Group 342
+    100216: Group 344
+    100218: Group 348
+    100220: Group 350
+    100222: Group 352
+    100224: Group 355
+    100226: Group 357
+    100228: Group 360
+    100230: Group 362
+    100232: Group 368
+    100234: Group 370
+    100236: Group 375
+    100238: Group 377
+    100240: Group 388
+    100242: Group 390
+    100244: Group 393
+    100246: Group 395
+    100248: Group 398
+    100250: Group 4
+    100252: Group 40
+    100254: Group 400
+    100256: Group 405
+    100258: Group 407
+    100260: Group 410
+    100262: Group 412
+    100264: Group 415
+    100266: Group 417
+    100268: Group 425
+    100270: Group 427
+    100272: Group 430
+    100274: Group 432
+    100276: Group 435
+    100278: Group 437
+    100280: Group 440
+    100282: Group 442
+    100284: Group 453
+    100286: Group 455
+    100288: Group 458
+    100290: Group 460
+    100292: Group 465
+    100294: Group 51
+    100296: Group 53
+    100298: Group 57
+    100300: Group 59
+    100302: Group 63
+    100304: Group 65
+    100306: Group 69
+    100308: Group 71
+    100310: Group 77
+    100312: Group 87
+    100314: Group 89
+    100316: Group#13
+    100318: Lattice
+    100320: Lattice 1
+    100322: Lattice 2
+    100324: Lattice 3
+    100326: Main Engine Assembly
+    100328: Main Solar Panel
+    100330: Main Solar Panel 1
+    100332: Main Solar Panel#1
+    100334: Main Solar Panel#1 1
+    100336: Main Thruster
+    100338: Main Thruster 1
+    100340: Main Thruster 2
+    100342: Main Thruster 3
+    100344: Main Thruster 4
+    100346: Main Thruster 5
+    100348: Main Thruster 6
+    100350: Main Thruster 7
+    100352: Manuvering Pod
+    100354: Manuvering Pod 1
+    100356: Manuvering Pod 2
+    100358: Manuvering Pod 3
+    100360: Manuvering Pod 4
+    100362: Manuvering Pod 5
+    100364: Manuvering Pod 6
+    100366: Manuvering Pod 7
+    100368: Observation Dome
+    100370: Pod and Frame
+    100372: Pod and Frame 1
+    100374: Pod and Frame 2
+    100376: Pod and Frame 3
+    100378: Pod and Frame 4
+    100380: Pod and Frame 5
+    100382: Pod and Frame 6
+    100384: Pod and Frame 7
+    100386: Radiator Array
+    100388: Radiator Array 1
+    100390: Radiator Panel
+    100392: Radiator Panel 1
+    100394: Radiator Panel 2
+    100396: Radiator Panel 3
+    100398: Radiator Panel 4
+    100400: Radiator Panel 5
+    100402: Radiator Panel 6
+    100404: Radiator Panel 7
+    100406: Radiator Panel#1
+    100408: Radiator Panel#1 1
+    100410: Radiator Panel#1 2
+    100412: Radiator Panel#1 3
+    100414: Rail gun
+    100416: solar bay
+    100418: solar bay 1
+    100420: Solar Panel Base
+    100422: Solar Panel Base 1
+    100424: Solar Panel Base 10
+    100426: Solar Panel Base 11
+    100428: Solar Panel Base 12
+    100430: Solar Panel Base 13
+    100432: Solar Panel Base 14
+    100434: Solar Panel Base 15
+    100436: Solar Panel Base 16
+    100438: Solar Panel Base 17
+    100440: Solar Panel Base 18
+    100442: Solar Panel Base 19
+    100444: Solar Panel Base 2
+    100446: Solar Panel Base 20
+    100448: Solar Panel Base 21
+    100450: Solar Panel Base 22
+    100452: Solar Panel Base 23
+    100454: Solar Panel Base 24
+    100456: Solar Panel Base 25
+    100458: Solar Panel Base 26
+    100460: Solar Panel Base 27
+    100462: Solar Panel Base 28
+    100464: Solar Panel Base 29
+    100466: Solar Panel Base 3
+    100468: Solar Panel Base 30
+    100470: Solar Panel Base 31
+    100472: Solar Panel Base 32
+    100474: Solar Panel Base 33
+    100476: Solar Panel Base 4
+    100478: Solar Panel Base 5
+    100480: Solar Panel Base 6
+    100482: Solar Panel Base 7
+    100484: Solar Panel Base 8
+    100486: Solar Panel Base 9
+    100488: Tank Support
+    100490: Tank Support 1
+    100492: Tank Support 10
+    100494: Tank Support 11
+    100496: Tank Support 2
+    100498: Tank Support 3
+    100500: Tank Support 4
+    100502: Tank Support 5
+    100504: Tank Support 6
+    100506: Tank Support 7
+    100508: Tank Support 8
+    100510: Tank Support 9
+    400000: 10m Arm Dextorous
+    400002: 10m Arm Dextorous 1
+    400004: 10m Arm Segment
+    400006: 10m Arm Segment 1
+    400008: 10m Arm Segment 2
+    400010: 10m Arm Segment 3
+    400012: 2m Docking Port
+    400014: Arm - Hand
+    400016: Arm - Hand 1
+    400018: Arm / Strong
+    400020: Arm Dextorous
+    400022: Arm Finger
+    400024: Arm Finger 1
+    400026: Arm Finger 2
+    400028: Arm Finger 3
+    400030: Arm Finger 4
+    400032: Arm Finger 5
+    400034: Arm Joint / Straight
+    400036: Arm Joint / Straight 1
+    400038: Arm Joint / Straight 2
+    400040: Arm Joint / Straight 3
+    400042: Arm Joint/90 Degree
+    400044: Arm Joint/90 Degree 1
+    400046: Arm Joint/90 Degree 2
+    400048: Arm Joint/90 Degree 3
+    400050: Arm Joint/90 Degree 4
+    400052: Arm Joint/90 Degree 5
+    400054: Arm Joint/90 Degree 6
+    400056: Arm Joint/90 Degree 7
+    400058: Arm Joint/90 Degree 8
+    400060: Arm Joint/90 Degree 9
+    400062: Arm Root
+    400064: Arm Root 1
+    400066: AS Frigate Configuration
+    400068: //RootNode
+    400070: Battery Pack
+    400072: Battery Pack 1
+    400074: Bay Doors
+    400076: Center Pod
+    400078: Command Module
+    400080: Engine Pod
+    400082: Engine Pod 1
+    400084: Fuel Tank
+    400086: Fuel Tank 1
+    400088: Group 108
+    400090: Group 110
+    400092: Group 132
+    400094: Group 134
+    400096: Group 138
+    400098: Group 148
+    400100: Group 150
+    400102: Group 169
+    400104: Group 171
+    400106: Group 193
+    400108: Group 195
+    400110: Group 21
+    400112: Group 216
+    400114: Group 219
+    400116: Group 221
+    400118: Group 223
+    400120: Group 225
+    400122: Group 228
+    400124: Group 230
+    400126: Group 232
+    400128: Group 234
+    400130: Group 237
+    400132: Group 239
+    400134: Group 241
+    400136: Group 243
+    400138: Group 246
+    400140: Group 248
+    400142: Group 250
+    400144: Group 252
+    400146: Group 255
+    400148: Group 257
+    400150: Group 259
+    400152: Group 261
+    400154: Group 264
+    400156: Group 266
+    400158: Group 268
+    400160: Group 270
+    400162: Group 279
+    400164: Group 282
+    400166: Group 284
+    400168: Group 286
+    400170: Group 288
+    400172: Group 291
+    400174: Group 293
+    400176: Group 295
+    400178: Group 297
+    400180: Group 300
+    400182: Group 302
+    400184: Group 304
+    400186: Group 306
+    400188: Group 309
+    400190: Group 311
+    400192: Group 313
+    400194: Group 315
+    400196: Group 318
+    400198: Group 320
+    400200: Group 322
+    400202: Group 324
+    400204: Group 327
+    400206: Group 329
+    400208: Group 331
+    400210: Group 333
+    400212: Group 340
+    400214: Group 342
+    400216: Group 344
+    400218: Group 348
+    400220: Group 350
+    400222: Group 352
+    400224: Group 355
+    400226: Group 357
+    400228: Group 360
+    400230: Group 362
+    400232: Group 368
+    400234: Group 370
+    400236: Group 375
+    400238: Group 377
+    400240: Group 388
+    400242: Group 390
+    400244: Group 393
+    400246: Group 395
+    400248: Group 398
+    400250: Group 4
+    400252: Group 40
+    400254: Group 400
+    400256: Group 405
+    400258: Group 407
+    400260: Group 410
+    400262: Group 412
+    400264: Group 415
+    400266: Group 417
+    400268: Group 425
+    400270: Group 427
+    400272: Group 430
+    400274: Group 432
+    400276: Group 435
+    400278: Group 437
+    400280: Group 440
+    400282: Group 442
+    400284: Group 453
+    400286: Group 455
+    400288: Group 458
+    400290: Group 460
+    400292: Group 465
+    400294: Group 51
+    400296: Group 53
+    400298: Group 57
+    400300: Group 59
+    400302: Group 63
+    400304: Group 65
+    400306: Group 69
+    400308: Group 71
+    400310: Group 77
+    400312: Group 87
+    400314: Group 89
+    400316: Group#13
+    400318: Lattice
+    400320: Lattice 1
+    400322: Lattice 2
+    400324: Lattice 3
+    400326: Main Engine Assembly
+    400328: Main Solar Panel
+    400330: Main Solar Panel 1
+    400332: Main Solar Panel#1
+    400334: Main Solar Panel#1 1
+    400336: Main Thruster
+    400338: Main Thruster 1
+    400340: Main Thruster 2
+    400342: Main Thruster 3
+    400344: Main Thruster 4
+    400346: Main Thruster 5
+    400348: Main Thruster 6
+    400350: Main Thruster 7
+    400352: Manuvering Pod
+    400354: Manuvering Pod 1
+    400356: Manuvering Pod 2
+    400358: Manuvering Pod 3
+    400360: Manuvering Pod 4
+    400362: Manuvering Pod 5
+    400364: Manuvering Pod 6
+    400366: Manuvering Pod 7
+    400368: Observation Dome
+    400370: Pod and Frame
+    400372: Pod and Frame 1
+    400374: Pod and Frame 2
+    400376: Pod and Frame 3
+    400378: Pod and Frame 4
+    400380: Pod and Frame 5
+    400382: Pod and Frame 6
+    400384: Pod and Frame 7
+    400386: Radiator Array
+    400388: Radiator Array 1
+    400390: Radiator Panel
+    400392: Radiator Panel 1
+    400394: Radiator Panel 2
+    400396: Radiator Panel 3
+    400398: Radiator Panel 4
+    400400: Radiator Panel 5
+    400402: Radiator Panel 6
+    400404: Radiator Panel 7
+    400406: Radiator Panel#1
+    400408: Radiator Panel#1 1
+    400410: Radiator Panel#1 2
+    400412: Radiator Panel#1 3
+    400414: Rail gun
+    400416: solar bay
+    400418: solar bay 1
+    400420: Solar Panel Base
+    400422: Solar Panel Base 1
+    400424: Solar Panel Base 10
+    400426: Solar Panel Base 11
+    400428: Solar Panel Base 12
+    400430: Solar Panel Base 13
+    400432: Solar Panel Base 14
+    400434: Solar Panel Base 15
+    400436: Solar Panel Base 16
+    400438: Solar Panel Base 17
+    400440: Solar Panel Base 18
+    400442: Solar Panel Base 19
+    400444: Solar Panel Base 2
+    400446: Solar Panel Base 20
+    400448: Solar Panel Base 21
+    400450: Solar Panel Base 22
+    400452: Solar Panel Base 23
+    400454: Solar Panel Base 24
+    400456: Solar Panel Base 25
+    400458: Solar Panel Base 26
+    400460: Solar Panel Base 27
+    400462: Solar Panel Base 28
+    400464: Solar Panel Base 29
+    400466: Solar Panel Base 3
+    400468: Solar Panel Base 30
+    400470: Solar Panel Base 31
+    400472: Solar Panel Base 32
+    400474: Solar Panel Base 33
+    400476: Solar Panel Base 4
+    400478: Solar Panel Base 5
+    400480: Solar Panel Base 6
+    400482: Solar Panel Base 7
+    400484: Solar Panel Base 8
+    400486: Solar Panel Base 9
+    400488: Tank Support
+    400490: Tank Support 1
+    400492: Tank Support 10
+    400494: Tank Support 11
+    400496: Tank Support 2
+    400498: Tank Support 3
+    400500: Tank Support 4
+    400502: Tank Support 5
+    400504: Tank Support 6
+    400506: Tank Support 7
+    400508: Tank Support 8
+    400510: Tank Support 9
+    2100000: _defaultMat
+    2100002: '[Color_002]'
+    2100004: _Gray6_
+    2100006: _Charcoal_
+    2100008: '[Color_001]'
+    2100010: _Black_
+    2100012: Color_A04
+    2100014: '[Color_003]'
+    2100016: '[Color_A01]'
+    2100018: Color_A05
+    2100020: Picture 3
+    2100022: '[Color_I16]'
+    2100024: '[Color_G16]'
+    2100026: Color_A13
+    2100028: '[Translucent_Glass_Tinted]'
+    2100030: '[Color_I06]'
+    2300000: 10m Arm Dextorous
+    2300002: 10m Arm Dextorous 1
+    2300004: 10m Arm Segment
+    2300006: 10m Arm Segment 1
+    2300008: 10m Arm Segment 2
+    2300010: 10m Arm Segment 3
+    2300012: 2m Docking Port
+    2300014: Arm - Hand
+    2300016: Arm - Hand 1
+    2300018: Arm Finger
+    2300020: Arm Finger 1
+    2300022: Arm Finger 2
+    2300024: Arm Finger 3
+    2300026: Arm Finger 4
+    2300028: Arm Finger 5
+    2300030: Battery Pack
+    2300032: Battery Pack 1
+    2300034: Bay Doors
+    2300036: Center Pod
+    2300038: Command Module
+    2300040: Engine Pod
+    2300042: Engine Pod 1
+    2300044: Fuel Tank
+    2300046: Fuel Tank 1
+    2300048: Group 108
+    2300050: Group 110
+    2300052: Group 132
+    2300054: Group 134
+    2300056: Group 148
+    2300058: Group 150
+    2300060: Group 169
+    2300062: Group 171
+    2300064: Group 193
+    2300066: Group 195
+    2300068: Group 216
+    2300070: Group 219
+    2300072: Group 221
+    2300074: Group 223
+    2300076: Group 225
+    2300078: Group 228
+    2300080: Group 230
+    2300082: Group 232
+    2300084: Group 234
+    2300086: Group 237
+    2300088: Group 239
+    2300090: Group 241
+    2300092: Group 243
+    2300094: Group 246
+    2300096: Group 248
+    2300098: Group 250
+    2300100: Group 252
+    2300102: Group 255
+    2300104: Group 257
+    2300106: Group 259
+    2300108: Group 261
+    2300110: Group 264
+    2300112: Group 266
+    2300114: Group 268
+    2300116: Group 270
+    2300118: Group 279
+    2300120: Group 282
+    2300122: Group 284
+    2300124: Group 286
+    2300126: Group 288
+    2300128: Group 291
+    2300130: Group 293
+    2300132: Group 295
+    2300134: Group 297
+    2300136: Group 300
+    2300138: Group 302
+    2300140: Group 304
+    2300142: Group 306
+    2300144: Group 309
+    2300146: Group 311
+    2300148: Group 313
+    2300150: Group 315
+    2300152: Group 318
+    2300154: Group 320
+    2300156: Group 322
+    2300158: Group 324
+    2300160: Group 327
+    2300162: Group 329
+    2300164: Group 331
+    2300166: Group 333
+    2300168: Group 340
+    2300170: Group 342
+    2300172: Group 344
+    2300174: Group 348
+    2300176: Group 350
+    2300178: Group 352
+    2300180: Group 355
+    2300182: Group 357
+    2300184: Group 360
+    2300186: Group 362
+    2300188: Group 368
+    2300190: Group 370
+    2300192: Group 375
+    2300194: Group 377
+    2300196: Group 388
+    2300198: Group 390
+    2300200: Group 393
+    2300202: Group 395
+    2300204: Group 398
+    2300206: Group 400
+    2300208: Group 405
+    2300210: Group 407
+    2300212: Group 410
+    2300214: Group 412
+    2300216: Group 415
+    2300218: Group 417
+    2300220: Group 425
+    2300222: Group 427
+    2300224: Group 430
+    2300226: Group 432
+    2300228: Group 435
+    2300230: Group 437
+    2300232: Group 440
+    2300234: Group 442
+    2300236: Group 453
+    2300238: Group 455
+    2300240: Group 458
+    2300242: Group 460
+    2300244: Group 465
+    2300246: Group 51
+    2300248: Group 53
+    2300250: Group 57
+    2300252: Group 59
+    2300254: Group 63
+    2300256: Group 65
+    2300258: Group 69
+    2300260: Group 71
+    2300262: Group 87
+    2300264: Group 89
+    2300266: Group#13
+    2300268: Lattice
+    2300270: Lattice 1
+    2300272: Lattice 2
+    2300274: Lattice 3
+    2300276: Main Engine Assembly
+    2300278: Main Thruster
+    2300280: Main Thruster 1
+    2300282: Main Thruster 2
+    2300284: Main Thruster 3
+    2300286: Main Thruster 4
+    2300288: Main Thruster 5
+    2300290: Main Thruster 6
+    2300292: Main Thruster 7
+    2300294: Manuvering Pod
+    2300296: Manuvering Pod 1
+    2300298: Manuvering Pod 2
+    2300300: Manuvering Pod 3
+    2300302: Manuvering Pod 4
+    2300304: Manuvering Pod 5
+    2300306: Manuvering Pod 6
+    2300308: Manuvering Pod 7
+    2300310: Pod and Frame
+    2300312: Pod and Frame 1
+    2300314: Pod and Frame 2
+    2300316: Pod and Frame 3
+    2300318: Pod and Frame 4
+    2300320: Pod and Frame 5
+    2300322: Pod and Frame 6
+    2300324: Pod and Frame 7
+    2300326: solar bay
+    2300328: solar bay 1
+    2300330: Solar Panel Base
+    2300332: Solar Panel Base 1
+    2300334: Solar Panel Base 10
+    2300336: Solar Panel Base 11
+    2300338: Solar Panel Base 12
+    2300340: Solar Panel Base 13
+    2300342: Solar Panel Base 14
+    2300344: Solar Panel Base 15
+    2300346: Solar Panel Base 16
+    2300348: Solar Panel Base 17
+    2300350: Solar Panel Base 18
+    2300352: Solar Panel Base 19
+    2300354: Solar Panel Base 2
+    2300356: Solar Panel Base 20
+    2300358: Solar Panel Base 21
+    2300360: Solar Panel Base 22
+    2300362: Solar Panel Base 23
+    2300364: Solar Panel Base 24
+    2300366: Solar Panel Base 25
+    2300368: Solar Panel Base 26
+    2300370: Solar Panel Base 27
+    2300372: Solar Panel Base 28
+    2300374: Solar Panel Base 29
+    2300376: Solar Panel Base 3
+    2300378: Solar Panel Base 30
+    2300380: Solar Panel Base 31
+    2300382: Solar Panel Base 32
+    2300384: Solar Panel Base 33
+    2300386: Solar Panel Base 4
+    2300388: Solar Panel Base 5
+    2300390: Solar Panel Base 6
+    2300392: Solar Panel Base 7
+    2300394: Solar Panel Base 8
+    2300396: Solar Panel Base 9
+    2300398: Tank Support
+    2300400: Tank Support 1
+    2300402: Tank Support 10
+    2300404: Tank Support 11
+    2300406: Tank Support 2
+    2300408: Tank Support 3
+    2300410: Tank Support 4
+    2300412: Tank Support 5
+    2300414: Tank Support 6
+    2300416: Tank Support 7
+    2300418: Tank Support 8
+    2300420: Tank Support 9
+    3300000: 10m Arm Dextorous
+    3300002: 10m Arm Dextorous 1
+    3300004: 10m Arm Segment
+    3300006: 10m Arm Segment 1
+    3300008: 10m Arm Segment 2
+    3300010: 10m Arm Segment 3
+    3300012: 2m Docking Port
+    3300014: Arm - Hand
+    3300016: Arm - Hand 1
+    3300018: Arm Finger
+    3300020: Arm Finger 1
+    3300022: Arm Finger 2
+    3300024: Arm Finger 3
+    3300026: Arm Finger 4
+    3300028: Arm Finger 5
+    3300030: Battery Pack
+    3300032: Battery Pack 1
+    3300034: Bay Doors
+    3300036: Center Pod
+    3300038: Command Module
+    3300040: Engine Pod
+    3300042: Engine Pod 1
+    3300044: Fuel Tank
+    3300046: Fuel Tank 1
+    3300048: Group 108
+    3300050: Group 110
+    3300052: Group 132
+    3300054: Group 134
+    3300056: Group 148
+    3300058: Group 150
+    3300060: Group 169
+    3300062: Group 171
+    3300064: Group 193
+    3300066: Group 195
+    3300068: Group 216
+    3300070: Group 219
+    3300072: Group 221
+    3300074: Group 223
+    3300076: Group 225
+    3300078: Group 228
+    3300080: Group 230
+    3300082: Group 232
+    3300084: Group 234
+    3300086: Group 237
+    3300088: Group 239
+    3300090: Group 241
+    3300092: Group 243
+    3300094: Group 246
+    3300096: Group 248
+    3300098: Group 250
+    3300100: Group 252
+    3300102: Group 255
+    3300104: Group 257
+    3300106: Group 259
+    3300108: Group 261
+    3300110: Group 264
+    3300112: Group 266
+    3300114: Group 268
+    3300116: Group 270
+    3300118: Group 279
+    3300120: Group 282
+    3300122: Group 284
+    3300124: Group 286
+    3300126: Group 288
+    3300128: Group 291
+    3300130: Group 293
+    3300132: Group 295
+    3300134: Group 297
+    3300136: Group 300
+    3300138: Group 302
+    3300140: Group 304
+    3300142: Group 306
+    3300144: Group 309
+    3300146: Group 311
+    3300148: Group 313
+    3300150: Group 315
+    3300152: Group 318
+    3300154: Group 320
+    3300156: Group 322
+    3300158: Group 324
+    3300160: Group 327
+    3300162: Group 329
+    3300164: Group 331
+    3300166: Group 333
+    3300168: Group 340
+    3300170: Group 342
+    3300172: Group 344
+    3300174: Group 348
+    3300176: Group 350
+    3300178: Group 352
+    3300180: Group 355
+    3300182: Group 357
+    3300184: Group 360
+    3300186: Group 362
+    3300188: Group 368
+    3300190: Group 370
+    3300192: Group 375
+    3300194: Group 377
+    3300196: Group 388
+    3300198: Group 390
+    3300200: Group 393
+    3300202: Group 395
+    3300204: Group 398
+    3300206: Group 400
+    3300208: Group 405
+    3300210: Group 407
+    3300212: Group 410
+    3300214: Group 412
+    3300216: Group 415
+    3300218: Group 417
+    3300220: Group 425
+    3300222: Group 427
+    3300224: Group 430
+    3300226: Group 432
+    3300228: Group 435
+    3300230: Group 437
+    3300232: Group 440
+    3300234: Group 442
+    3300236: Group 453
+    3300238: Group 455
+    3300240: Group 458
+    3300242: Group 460
+    3300244: Group 465
+    3300246: Group 51
+    3300248: Group 53
+    3300250: Group 57
+    3300252: Group 59
+    3300254: Group 63
+    3300256: Group 65
+    3300258: Group 69
+    3300260: Group 71
+    3300262: Group 87
+    3300264: Group 89
+    3300266: Group#13
+    3300268: Lattice
+    3300270: Lattice 1
+    3300272: Lattice 2
+    3300274: Lattice 3
+    3300276: Main Engine Assembly
+    3300278: Main Thruster
+    3300280: Main Thruster 1
+    3300282: Main Thruster 2
+    3300284: Main Thruster 3
+    3300286: Main Thruster 4
+    3300288: Main Thruster 5
+    3300290: Main Thruster 6
+    3300292: Main Thruster 7
+    3300294: Manuvering Pod
+    3300296: Manuvering Pod 1
+    3300298: Manuvering Pod 2
+    3300300: Manuvering Pod 3
+    3300302: Manuvering Pod 4
+    3300304: Manuvering Pod 5
+    3300306: Manuvering Pod 6
+    3300308: Manuvering Pod 7
+    3300310: Pod and Frame
+    3300312: Pod and Frame 1
+    3300314: Pod and Frame 2
+    3300316: Pod and Frame 3
+    3300318: Pod and Frame 4
+    3300320: Pod and Frame 5
+    3300322: Pod and Frame 6
+    3300324: Pod and Frame 7
+    3300326: solar bay
+    3300328: solar bay 1
+    3300330: Solar Panel Base
+    3300332: Solar Panel Base 1
+    3300334: Solar Panel Base 10
+    3300336: Solar Panel Base 11
+    3300338: Solar Panel Base 12
+    3300340: Solar Panel Base 13
+    3300342: Solar Panel Base 14
+    3300344: Solar Panel Base 15
+    3300346: Solar Panel Base 16
+    3300348: Solar Panel Base 17
+    3300350: Solar Panel Base 18
+    3300352: Solar Panel Base 19
+    3300354: Solar Panel Base 2
+    3300356: Solar Panel Base 20
+    3300358: Solar Panel Base 21
+    3300360: Solar Panel Base 22
+    3300362: Solar Panel Base 23
+    3300364: Solar Panel Base 24
+    3300366: Solar Panel Base 25
+    3300368: Solar Panel Base 26
+    3300370: Solar Panel Base 27
+    3300372: Solar Panel Base 28
+    3300374: Solar Panel Base 29
+    3300376: Solar Panel Base 3
+    3300378: Solar Panel Base 30
+    3300380: Solar Panel Base 31
+    3300382: Solar Panel Base 32
+    3300384: Solar Panel Base 33
+    3300386: Solar Panel Base 4
+    3300388: Solar Panel Base 5
+    3300390: Solar Panel Base 6
+    3300392: Solar Panel Base 7
+    3300394: Solar Panel Base 8
+    3300396: Solar Panel Base 9
+    3300398: Tank Support
+    3300400: Tank Support 1
+    3300402: Tank Support 10
+    3300404: Tank Support 11
+    3300406: Tank Support 2
+    3300408: Tank Support 3
+    3300410: Tank Support 4
+    3300412: Tank Support 5
+    3300414: Tank Support 6
+    3300416: Tank Support 7
+    3300418: Tank Support 8
+    3300420: Tank Support 9
+    4300000: Mesh Center Pod
+    4300002: Mesh Pod and Frame
+    4300004: Mesh Manuvering Pod
+    4300006: Mesh Main Engine Assembly
+    4300008: Mesh Main Thruster
+    4300010: Mesh Lattice
+    4300012: Mesh Group 51
+    4300014: Mesh 2m Docking Port
+    4300016: Mesh Engine Pod
+    4300018: Mesh Tank Support
+    4300020: Mesh Group 87
+    4300022: Mesh Group 89
+    4300024: Mesh Solar Panel Base
+    4300026: Mesh solar bay
+    4300028: Mesh Group 132
+    4300030: Mesh Fuel Tank
+    4300032: Mesh Battery Pack
+    4300034: Mesh Group 216
+    4300036: Mesh Group 219
+    4300038: Mesh Command Module
+    4300040: Mesh Bay Doors
+    4300042: Mesh Group 340
+    4300044: Mesh Group 342
+    4300046: Mesh Group 344
+    4300048: Mesh Group#13
+    4300050: Mesh Group 348
+    4300052: Mesh Group 350
+    4300054: Mesh Group 355
+    4300056: Mesh Group 357
+    4300058: Mesh Group 360
+    4300060: Mesh Group 362
+    4300062: Mesh 10m Arm Segment
+    4300064: Mesh Group 368
+    4300066: Mesh Group 370
+    4300068: Mesh 10m Arm Dextorous
+    4300070: Mesh Arm - Hand
+    4300072: Mesh Arm Finger
+    4300074: Mesh Group 465
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -44,6 +1030,7 @@ SketchUpImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -58,6 +1045,7 @@ SketchUpImporter:
     globalScale: 0.0254
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -75,11 +1063,16 @@ SketchUpImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
@@ -94,7 +1087,6 @@ SketchUpImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
